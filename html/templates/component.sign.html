@@ -1,0 +1,26 @@
+<script type="text/x-template" id="template-sign-main">
+  <div class="container">
+      <div class="col-xs-12">
+          <div class="text-title text-mid mgT10">{{wording.signTitle1}}</div>
+      </div>
+      <div class="logoImg4-3 text-title4" @click.stop.prevent="" @mousedown="">
+          <div class="mgT10">
+             {{timer}} {{wording.signTitle2}}
+          </div>
+      </div>
+      <!-- <img class="imgSignSample" src="img/sign.png"> -->
+      <div id="canvasDiv" style="margin-top: 20px;"></div>
+      <tr>
+              <td>
+                  <div  @click.stop.prevent="" @mousedown="clearCanvas" class="logoImg8">
+                      <b v-bind:style="{color:item.color}" class="text-subTitle2-2" > {{wording.btSign1}} </b>
+                  </div>
+              </td>
+              <td>
+                  <div  @click.stop.prevent="" @mousedown="sendData" class="logoImg9">
+                      <b v-bind:style="{color:item.color}" class="text-subTitle2" > {{wording.btSign2}} </b>
+                  </div>
+              </td>
+          </tr>
+  </div>
+</script>
