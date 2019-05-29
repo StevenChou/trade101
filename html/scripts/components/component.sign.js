@@ -27,6 +27,15 @@ Vue.component('component-sign-main', {
       alert('sending data...');
       this.handleMouseDown(this.wording.toSuccess);
     },
+    download: function() {
+      console.log('>>> canvas.toDataURL():', this.myCanvas.toDataURL());
+      this.myCanvas.toBlob(function(blob) {
+        console.log('>>> blob:', blob);
+        saveAs(blob, 'canvassign.png');
+
+        // TODO CALL sendData
+      });
+    },
     onDocumentTouchMove: function(event) {
       if (event.touches.length == 1) {
         event.preventDefault();
@@ -40,9 +49,9 @@ Vue.component('component-sign-main', {
       this.clickDrag.push(dragging);
     },
     redraw: function() {
-      this.context.strokeStyle = '#df4b26';
+      this.context.strokeStyle = '#584843';
       this.context.lineJoin = 'round';
-      this.context.lineWidth = 2;
+      this.context.lineWidth = 5;
       while (this.clickX.length > 0) {
         this.point.bx = this.point.x;
         this.point.by = this.point.y;
@@ -208,8 +217,8 @@ Vue.component('component-sign-navBar', {
     backBtn: function() {
       kiosk.API.goToNext('scanQRcode');
     },
-    goHome: function () {
-        kiosk.API.goToNext('mainMenu');
-    },
+    goHome: function() {
+      kiosk.API.goToNext('mainMenu');
+    }
   }
 });
