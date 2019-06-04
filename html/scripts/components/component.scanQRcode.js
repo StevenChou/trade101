@@ -114,6 +114,8 @@ Vue.component('component-scanQRcode-main', {
         invNo = invData.substr(5, 14);
       }
 
+      // TODO: 隨機碼
+
       this.getInvNoInfo(invNo);
     },
     StartScanner: function() {

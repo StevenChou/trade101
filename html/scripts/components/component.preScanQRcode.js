@@ -1,36 +1,34 @@
 //Body
 Vue.component('component-preScanQRcode-main', {
-    template: '#template-preScanQRcode-main',
-    props: ['model','culture'],
+  template: '#template-preScanQRcode-main',
+  props: ['model', 'culture'],
 
-
-    methods: {
-        // Btn Click
-        handleMouseDown: function (nextId) {
-            kiosk.API.goToNext(nextId);
-        },
-        
-    },
-
-    computed: {
-        wording: function () {
-            return kiosk.wording[this.culture].preScanQRcode;
-        },
+  methods: {
+    // Btn Click
+    handleMouseDown: function(nextId) {
+      kiosk.API.goToNext(nextId);
     }
+  },
+
+  computed: {
+    wording: function() {
+      return kiosk.wording[this.culture].preScanQRcode;
+    }
+  }
 });
 
 //Head
 Vue.component('component-preScanQRcode-navBar', {
-    props: ['culture', 'model'],
-    template: '#template-common-navBar',
-    methods:{
-        backBtn: function () {
-            kiosk.API.goToNext('selectDoc');
-        },
-        goHome: function () {
-            kiosk.API.goToNext('mainMenu');
-        },
+  props: ['culture', 'model'],
+  template: '#template-common-navBar',
+  methods: {
+    backBtn: function() {
+      kiosk.API.goToNext('selectDoc');
+    },
+    goHome: function() {
+      kiosk.API.goToNext('mainMenu');
     }
+  }
 });
 
 //ªí§À
