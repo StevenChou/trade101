@@ -1935,5 +1935,56 @@ kiosk.API.Device = kiosk.API.Device || {};
     };
     // === RFID E N D ===
 
+    // === MMM ===
+    kiosk.API.Device.MMM = {
+        DeviceAction: {
+            GetData: 0,
+            StopGet: 1
+        },
+        generuteParemater: function (action) {
+            var DeviceCmd = {
+                paperReq: ''
+            },
+                actionCmd = {
+                    Action: action,
+                    Parameter: JSON.stringify(DeviceCmd)
+                },
+                cmd = {
+                    "DeviceName": "MMM",
+                    "Worktype": "PostRequest",
+                    "Paremater": JSON.stringify(actionCmd),
+                    "ReponseModule": "UI",
+                };
+            return cmd;
+        },
+        GetData: function (success, fail) {
+            kiosk.API.Device.postToDeviceWithCallback(
+                JSON.stringify(this.generuteParemater(this.DeviceAction.GetData)),
+                function (res) {
+                    var result = JSON.parse(res);
+                    if (result.IsSuccess) {
+                        success(result);
+                    }
+                    else {
+                        success(result);
+                        kiosk.API.log.logError(res, 'MMM_GetData', 'MMM');
+                    }
+                });
+        },
+        StopGet: function (success, fail) {
+            kiosk.API.Device.postToDeviceWithCallback(
+                JSON.stringify(this.generuteParemater(this.DeviceAction.StopGet)),
+                function (res) {
+                    var result = JSON.parse(res);
+                    if (result.IsSuccess) {
+                        success(result);
+                    }
+                    else {
+                        success(result);
+                        kiosk.API.log.logError(res, 'MMM_StopGet', 'MMM');
+                    }
+                });
+        }
+    };
 
 })();
