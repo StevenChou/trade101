@@ -30,12 +30,12 @@ Vue.component('component-scanPassport-main', {
               ) {
                 // 資料驗證中...
                 scanPassportObj.megCode = 'passportCerting';
-                alert(
-                  '掃描成功!! >>>nationality:' +
-                    jsonObj['nationality'] +
-                    '--->>>documentNumber' +
-                    jsonObj['documentNumber']
-                );
+                // alert(
+                //   '掃描成功!! >>>nationality:' +
+                //     jsonObj['nationality'] +
+                //     '--->>>documentNumber' +
+                //     jsonObj['documentNumber']
+                // );
 
                 scanPassportObj.lock = true;
 
@@ -61,7 +61,7 @@ Vue.component('component-scanPassport-main', {
     stopPassportScan: function() {
       kiosk.API.Device.MMM.StopGet(
         function(res) {
-          alert(JSON.stringify(res));
+          // alert(JSON.stringify(res));
         },
         function() {}
       );
@@ -81,7 +81,7 @@ Vue.component('component-scanPassport-main', {
     this.startPassportScan();
   },
   beforeDestroy: function() {
-    alert('釋放資源!!');
+    // alert('釋放資源!!');
     this.stopPassportScan();
     clearInterval(this.myInterval);
   }
