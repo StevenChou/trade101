@@ -14,53 +14,56 @@ Vue.component('component-scanPassport-main', {
     handleMouseDown: function(nextId) {
       kiosk.API.goToNext(nextId);
     },
+    doInterval: function() {
+      const scanPassportObj = this;
+      if (!scanPassportObj.lock) {
+        // 護照掃描中...
+        scanPassportObj.megCode = 'scanPassportLoading';
+        kiosk.API.Device.MMM.GetData(
+          function(res) {
+            const jsonObj = JSON.parse(res['jsonStr']);
+            if (
+              jsonObj['nationality'] !== '' &&
+              jsonObj['documentNumber'] !== ''
+            ) {
+              // 資料驗證中...
+              scanPassportObj.megCode = 'passportCerting';
+              // alert(
+              //   '掃描成功!! >>>nationality:' +
+              //     jsonObj['nationality'] +
+              //     '--->>>documentNumber' +
+              //     jsonObj['documentNumber']
+              // );
+
+              scanPassportObj.lock = true;
+
+              // 模擬 Ajax
+              setTimeout(function() {
+                // TODO:資料驗證失敗... 請重新掃描
+                // TODO:成功自動導頁
+
+                // 驗證成功
+                scanPassportObj.megCode = 'passportCerted';
+
+                setTimeout(function() {
+                  kiosk.API.goToNext(scanPassportObj.wording['toPreScanQR']);
+                }, 1000);
+              }, 1000);
+            }
+          },
+          function() {}
+        );
+      }
+    },
     startPassportScan: function() {
       const scanPassportObj = this;
-
-      this.myInterval = setInterval(function() {
-        if (!scanPassportObj.lock) {
-          // 護照掃描中...
-          scanPassportObj.megCode = 'scanPassportLoading';
-          kiosk.API.Device.MMM.GetData(
-            function(res) {
-              const jsonObj = JSON.parse(res['jsonStr']);
-              if (
-                jsonObj['nationality'] !== '' &&
-                jsonObj['documentNumber'] !== ''
-              ) {
-                // 資料驗證中...
-                scanPassportObj.megCode = 'passportCerting';
-                // alert(
-                //   '掃描成功!! >>>nationality:' +
-                //     jsonObj['nationality'] +
-                //     '--->>>documentNumber' +
-                //     jsonObj['documentNumber']
-                // );
-
-                scanPassportObj.lock = true;
-
-                // 模擬 Ajax
-                setTimeout(function() {
-                  // TODO:資料驗證失敗... 請重新掃描
-                  // TODO:成功自動導頁
-
-                  // 驗證成功
-                  scanPassportObj.megCode = 'passportCerted';
-
-                  setTimeout(function() {
-                    kiosk.API.goToNext(scanPassportObj.wording['toPreScanQR']);
-                  }, 1000);
-                }, 1000);
-              }
-            },
-            function() {}
-          );
-        }
-      }, 6000);
+      this.doInterval();
+      this.myInterval = setInterval(scanPassportObj.doInterval, 6000);
     },
     stopPassportScan: function() {
       kiosk.API.Device.MMM.StopGet(
         function(res) {
+          alert('關閉');
           // alert(JSON.stringify(res));
         },
         function() {}

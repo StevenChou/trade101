@@ -24,8 +24,11 @@
               </td>
           </tr>
       </div> -->
-      <div class="logoImg4 text-title2" @mousedown="handleMouseDown(wording.toError)">
+      <!-- <div class="logoImg4 text-title2" @mousedown="handleMouseDown(wording.toError)">
           {{wording.scanError}}
+      </div> -->
+      <div class="logoImg4 text-title4">
+          <div v-html="infoData"></div>
       </div>
       <img class="imgPassportSample" src="img/scanPermit.png" @mousedown="handleMouseDown(wording.toPreScanQR)">
   </div>

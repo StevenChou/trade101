@@ -203,6 +203,9 @@
                 scanError: '掃描錯誤，請重新操作',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
+                putPermit:'請放置入臺證',
+                permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
                 errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
