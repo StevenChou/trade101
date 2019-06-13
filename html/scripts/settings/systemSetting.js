@@ -194,6 +194,9 @@
                 scanError: '掃描錯誤，請重新操作',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
+                scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerting:'資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted:'<div style="margin-top: 10px;">驗證成功</div>'
             },
             scanPermit: {
                 scanPermitTitle: '請掃描您的入臺證條碼',
