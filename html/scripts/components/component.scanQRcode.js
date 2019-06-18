@@ -18,7 +18,38 @@ Vue.component('component-scanQRcode-main', {
   methods: {
     handleMouseDown: function(nextId) {
       if (!kiosk.app.$data.lockBtn) {
-        kiosk.API.goToNext(nextId);
+        //開立小額單
+        const data = {
+          passportNo: '108670735170',
+          country: 'CN',
+          inDate: '20190617',
+          idn: '321102199612261047',
+          ename: 'WHALEBRO',
+          applyMainList: [
+            {
+              unvAmt: '2000',
+              qty: '1',
+              itemCname: 'PY06180001',
+              brandCname: 'PY06170001',
+              unvNo: 'QG19603681',
+              modelCname: '1'
+            }
+          ]
+        };
+        External.TradevanKioskCommon.CommonService.Apply(
+          JSON.stringify(data),
+          function(res) {
+            const resObj = JSON.parse(res);
+            alert(
+              '>>> 回傳資訊:' +
+                resObj.result['message'] +
+                '---' +
+                resObj.result['status']
+            );
+            kiosk.API.goToNext(nextId);
+          },
+          function() {}
+        );
       }
     },
     getInvNoInfo: function(invNo) {

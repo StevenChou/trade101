@@ -28,27 +28,54 @@ Vue.component('component-scanPassport-main', {
             ) {
               // 資料驗證中...
               scanPassportObj.megCode = 'passportCerting';
-              // alert(
-              //   '掃描成功!! >>>nationality:' +
-              //     jsonObj['nationality'] +
-              //     '--->>>documentNumber' +
-              //     jsonObj['documentNumber']
-              // );
 
-              scanPassportObj.lock = true;
+              alert(
+                '掃描成功!! >>>nationality:' +
+                  jsonObj['nationality'] +
+                  '--->>>documentNumber' +
+                  jsonObj['documentNumber']
+              );
 
-              // 模擬 Ajax
-              setTimeout(function() {
-                // TODO:資料驗證失敗... 請重新掃描
-                // TODO:成功自動導頁
+              //查詢移民署
+              const postData = {
+                passportNo: jsonObj['nationality'],
+                country: jsonObj['documentNumber']
+              };
+              External.TradevanKioskCommon.CommonService.CallImm(
+                JSON.stringify(postData),
+                function(res) {
+                  alert('>>> json string:' + res);
+                  const resObj = JSON.parse(res);
+                  alert(
+                    '>>> 回傳資訊:' +
+                      resObj.result['message'] +
+                      '---' +
+                      resObj.result['status']
+                  );
 
-                // 驗證成功
-                scanPassportObj.megCode = 'passportCerted';
+                  // succ
+                  if (resObj !== null && resObj.status === '000') {
+                    scanPassportObj.lock = true;
 
-                setTimeout(function() {
-                  kiosk.API.goToNext(scanPassportObj.wording['toPreScanQR']);
-                }, 1000);
-              }, 1000);
+                    scanPassportObj.megCode = 'passportCerted';
+
+                    setTimeout(function() {
+                      kiosk.API.goToNext(
+                        scanPassportObj.wording['toPreScanQR']
+                      );
+                    }, 1000);
+                  } else {
+                    // TODO:資料驗證失敗... 請重新掃描
+                    alert('>>> 重新掃描');
+                    setTimeout(function() {
+                      kiosk.API.goToNext(
+                        scanPassportObj.wording['toPreScanQR']
+                      );
+                    }, 1000);
+                  }
+                },
+                function() {}
+              );
             }
           },
           function() {}
