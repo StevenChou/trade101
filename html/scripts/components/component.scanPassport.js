@@ -54,7 +54,7 @@ Vue.component('component-scanPassport-main', {
                   );
 
                   // succ
-                  if (resObj !== null && resObj.status === '000') {
+                  if (resObj && resObj.result['status'] === '000') {
                     scanPassportObj.lock = true;
 
                     scanPassportObj.megCode = 'passportCerted';

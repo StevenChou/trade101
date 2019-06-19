@@ -28,13 +28,25 @@ Vue.component('component-sign-main', {
       this.handleMouseDown(this.wording.toSuccess);
     },
     download: function() {
-      console.log('>>> canvas.toDataURL():', this.myCanvas.toDataURL());
-      this.myCanvas.toBlob(function(blob) {
-        console.log('>>> blob:', blob);
-        saveAs(blob, 'canvassign.png');
+      //console.log('>>> canvas.toDataURL():', this.myCanvas.toDataURL());
 
-        // TODO CALL sendData
-      });
+      var data = {
+        taxAppNo: '97162640108061810003',
+        sign: this.myCanvas.toDataURL().split(',')[1]
+      };
+      External.TradevanKioskCommon.CommonService.Sign(
+        JSON.stringify(data),
+        function(res) {
+          alert(JSON.stringify(res));
+        },
+        function() {}
+      );
+
+      // save pic
+      // this.myCanvas.toBlob(function(blob) {
+      //   console.log('>>> blob:', blob);
+      //   saveAs(blob, 'canvassign.png');
+      // });
     },
     onDocumentTouchMove: function(event) {
       if (event.touches.length == 1) {

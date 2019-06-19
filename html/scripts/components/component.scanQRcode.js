@@ -18,6 +18,7 @@ Vue.component('component-scanQRcode-main', {
   methods: {
     handleMouseDown: function(nextId) {
       if (!kiosk.app.$data.lockBtn) {
+        kiosk.app.$data.lockBtn = true;
         //開立小額單
         const data = {
           passportNo: '108670735170',
@@ -46,7 +47,14 @@ Vue.component('component-scanQRcode-main', {
                 '---' +
                 resObj.result['status']
             );
-            kiosk.API.goToNext(nextId);
+
+            if (resObj && resObj.result['status'] === '000') {
+              kiosk.API.goToNext(nextId);
+            } else {
+              kiosk.app.$data.lockBtn = false;
+              // for testing
+              kiosk.API.goToNext(nextId);
+            }
           },
           function() {}
         );
