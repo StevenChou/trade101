@@ -2,20 +2,18 @@
 Vue.component('component-detail-main', {
   template: '#template-detail-main',
   props: ['model', 'culture'],
-
   data: function() {
     return {
-      rows: []
+      rows: [],
+      items: []
     };
   },
-
   mounted: function() {
     kiosk.app.$data.isScrollDisable = false;
   },
   destroyed: function() {
     kiosk.app.$data.isScrollDisable = true;
   },
-
   methods: {
     // Btn Click
     handleMouseDown: function(nextId) {
@@ -27,13 +25,19 @@ Vue.component('component-detail-main', {
     },
     handleItemDelete: function() {
       console.log('>>> clicked!!');
+      var detailObj = this;
       this.rows = this.rows.filter(function(row) {
+        // 刪除對應發票品項
+        row.check &&
+          (detailObj.items = detailObj.items.filter(function(item) {
+            return item.invNo !== row.invNo;
+          }));
         return !row.check;
       });
     },
     hasCheckProperty: function() {
       let isValid = true;
-      kiosk.app.$data.invoiceItems.forEach(function(invoice) {
+      kiosk.app.$data.invoiceNum.forEach(function(invoice) {
         if (invoice.check === undefined) {
           isValid = false;
         }
@@ -50,7 +54,8 @@ Vue.component('component-detail-main', {
   mounted: function() {
     console.log('>>>[mounted] detail');
     if (this.hasCheckProperty()) {
-      this.rows = kiosk.app.$data.invoiceItems;
+      this.rows = kiosk.app.$data.invoiceNum;
+      this.items = kiosk.app.$data.invoiceItems;
     } else {
       Swal.fire({
         type: 'error',
@@ -62,6 +67,7 @@ Vue.component('component-detail-main', {
   },
   beforeDestroy: function() {
     console.log('>>>[beforeDestroy] detail');
-    kiosk.app.$data.invoiceItems = this.rows;
+    kiosk.app.$data.invoiceNum = this.rows;
+    kiosk.app.$data.invoiceItems = this.items;
   }
 });

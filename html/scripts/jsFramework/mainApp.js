@@ -357,7 +357,9 @@ var kiosk = kiosk || {};
         isScrollDisable: true,
         axiosInstances: { ap101: null, apTrade: null },
         invoiceItems: [],
-        lockBtn: false
+        invoiceNum: [],
+        lockBtn: false,
+        userData: {}
       },
       methods: {
         updateNav: function(componentName, conponentModel) {
