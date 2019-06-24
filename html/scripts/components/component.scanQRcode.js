@@ -4,7 +4,7 @@ Vue.component('component-scanQRcode-main', {
   data: function() {
     return {
       //今日累積退稅金額
-      refund: 0,
+      refund: kiosk.app.$data.userData['dayAmtTotal'],
       //掃描發票的數量
       number: 0,
       //消費金額
@@ -142,7 +142,6 @@ Vue.component('component-scanQRcode-main', {
       return sum;
     },
     addInvNum: function(invNo) {
-      // TODO 含稅金額
       this.invoiceNum.push({
         invNo: invNo,
         check: false,

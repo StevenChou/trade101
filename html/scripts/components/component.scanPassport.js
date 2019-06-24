@@ -61,6 +61,14 @@ Vue.component('component-scanPassport-main', {
                       scanPassportObj.lock = true;
                       scanPassportObj.megCode = 'passportCerted';
 
+                      // global data --- 儲存護照相關資訊
+                      kiosk.app.$data.userData['passportNo'] =
+                        jsonObj['documentNumber'];
+                      kiosk.app.$data.userData['country'] =
+                        jsonObj['nationality'];
+                      kiosk.app.$data.userData['dayAmtTotal'] =
+                        resObj.result['dayAmtTotal'];
+
                       setTimeout(function() {
                         kiosk.API.goToNext(
                           scanPassportObj.wording['toPreScanQR']
