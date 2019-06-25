@@ -62,12 +62,7 @@ Vue.component('component-scanPassport-main', {
                       scanPassportObj.megCode = 'passportCerted';
 
                       // global data --- 儲存護照相關資訊
-                      kiosk.app.$data.userData['passportNo'] =
-                        jsonObj['documentNumber'];
-                      kiosk.app.$data.userData['country'] =
-                        jsonObj['nationality'];
-                      kiosk.app.$data.userData['dayAmtTotal'] =
-                        resObj.result['dayAmtTotal'];
+                      scanPassportObj.storeUserData(jsonObj, resObj);
 
                       setTimeout(function() {
                         kiosk.API.goToNext(
@@ -93,6 +88,12 @@ Vue.component('component-scanPassport-main', {
           }
         );
       }
+    },
+    storeUserData: function(passportObj, validationObj) {
+      kiosk.app.$data.userData['passportNo'] = passportObj['documentNumber'];
+      kiosk.app.$data.userData['country'] = passportObj['nationality'];
+      kiosk.app.$data.userData['dayAmtTotal'] =
+        validationObj.result['dayAmtTotal'];
     },
     startPassportScan: function() {
       const scanPassportObj = this;

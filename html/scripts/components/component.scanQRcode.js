@@ -19,6 +19,10 @@ Vue.component('component-scanQRcode-main', {
     };
   },
   methods: {
+    // 千分位
+    formatNumber: function(num) {
+      return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    },
     handleMouseDown: function(nextId) {
       // alert('>>> btn name:' + this.wording.toDetail);
       // alert('>>> nextId:' + nextId + '---' + kiosk.app.$data.lockBtn);
@@ -139,7 +143,7 @@ Vue.component('component-scanQRcode-main', {
         }
       });
 
-      return sum;
+      return this.formatNumber(sum);
     },
     addInvNum: function(invNo) {
       this.invoiceNum.push({

@@ -15,6 +15,10 @@ Vue.component('component-detail-main', {
     kiosk.app.$data.isScrollDisable = true;
   },
   methods: {
+    // 千分位
+    formatNumber: function(num) {
+      return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    },
     // Btn Click
     handleMouseDown: function(nextId) {
       kiosk.API.goToNext(nextId);
