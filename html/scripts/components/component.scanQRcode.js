@@ -38,8 +38,12 @@ Vue.component('component-scanQRcode-main', {
             inDate: '20190617',
             idn: '321102199612261047',
             ename: 'WHALEBRO',
-            applyMainList: scanQRcode.transformItems()
+            applyMainList: this.transformItems()
           };
+
+          alert('>>> sendData:' + JSON.stringify(data));
+
+          // [ TODO ] 沒有品項，lock btn!!
 
           // alert('>>> data.applyMainList.length:' + data.applyMainList.length);
           // alert('>>> data.applyMainList[0]:' + data.applyMainList[0].unvNo);
@@ -265,6 +269,11 @@ Vue.component('component-scanQRcode-navBar', {
       if (!kiosk.app.$data.lockBtn) {
         kiosk.API.goToNext('mainMenu');
       }
+    }
+  },
+  computed: {
+    wording: function() {
+      return kiosk.wording[this.culture].common;
     }
   }
 });

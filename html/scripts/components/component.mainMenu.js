@@ -1,107 +1,108 @@
 // MainPage
-Vue.component("component-mainMenu-main", {
-  props: ["model", "culture"],
-  template: "#template-mainMenu-main",
-
-  data: function () {
+Vue.component('component-mainMenu-main', {
+  props: ['model', 'culture'],
+  template: '#template-mainMenu-main',
+  data: function() {
     // Status �M��
     kiosk.API.initStatus();
+    console.log('>>> culture:', this.culture);
     return {
       activeLang: this.culture
     };
   },
-
   computed: {
-    wording: function () {
+    wording: function() {
       return kiosk.wording[this.culture].mainMenu;
     }
   }
 });
 
-Vue.component("component-common-langmenu", {
-  template: "#template-navbar-common-culture",
-  props: ["culture"],
-
-  data: function () {
+Vue.component('component-common-langmenu', {
+  template: '#template-navbar-common-culture',
+  props: ['culture'],
+  data: function() {
     return {
       rows: [
         [
           {
-            next: "remind",
-            culture: "ZHTW",
+            next: 'remind',
+            culture: 'ZHTW',
             name: kiosk.wording[this.culture].mainMenu.lang01
           },
           {
-            next: "remind",
-            culture: "ENUS",
+            next: 'remind',
+            culture: 'ZHCH',
+            name: kiosk.wording[this.culture].mainMenu.lang13
+          },
+          {
+            next: 'remind',
+            culture: 'ENUS',
             name: kiosk.wording[this.culture].mainMenu.lang02
           },
           {
-            next: "remind",
-            culture: "JAJP",
+            next: 'remind',
+            culture: 'JAJP',
             name: kiosk.wording[this.culture].mainMenu.lang03
-          },
-          {
-            next: "remind",
-            culture: "KOKR",
-            name: kiosk.wording[this.culture].mainMenu.lang04
           }
         ],
         [
           {
-            next: "remind",
-            culture: "555",
+            next: 'remind',
+            culture: '555',
             name: kiosk.wording[this.culture].mainMenu.lang05
           },
           {
-            next: "remind",
-            culture: "666",
+            next: 'remind',
+            culture: '666',
             name: kiosk.wording[this.culture].mainMenu.lang06
           },
           {
-            next: "remind",
-            culture: "777",
+            next: 'remind',
+            culture: '777',
             name: kiosk.wording[this.culture].mainMenu.lang07
           },
           {
-            next: "remind",
-            culture: "888",
+            next: 'remind',
+            culture: '888',
             name: kiosk.wording[this.culture].mainMenu.lang08
           }
         ],
         [
           {
-            next: "remind",
-            culture: "999",
+            next: 'remind',
+            culture: '999',
             name: kiosk.wording[this.culture].mainMenu.lang09
           },
           {
-            next: "remind",
-            culture: "000",
+            next: 'remind',
+            culture: '000',
             name: kiosk.wording[this.culture].mainMenu.lang10
+          },
+          {
+            next: 'remind',
+            culture: 'KOKR',
+            name: kiosk.wording[this.culture].mainMenu.lang04
           }
         ]
-      ],
-
+      ]
     };
   },
 
   methods: {
-    wording: function () {
+    wording: function() {
       return kiosk.wording[this.culture].mainMenu;
     },
-    changeCulture: function (el) {
+    changeCulture: function(el) {
       kiosk.API.changeCulture(kiosk.enum.culture[el]);
     },
-    isActive: function (culture) {
+    isActive: function(culture) {
       var result = this.culture == culture;
       return result;
     },
     // Btn Click
-    handleMouseDown: function (nextId) {
+    handleMouseDown: function(nextId) {
       kiosk.API.goToNext(nextId);
-    },
-
+    }
   },
 
   computed: {

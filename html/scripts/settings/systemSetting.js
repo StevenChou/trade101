@@ -32,6 +32,7 @@
     kiosk.enum.culture = {
         'ENUS': 1,
         'ZHTW': 2,
+        'ZHCH': 13,
         'JAJP': 3,
         'KOKR': 4,
         '555': 5,
@@ -44,6 +45,7 @@
     returnCulture = {
         1: "en",
         2: "zh_TW",
+        13:'zh_CN',
         3: "jp",
         4: "ko",
         5: "555",
@@ -57,11 +59,11 @@
         //英文
         1: {
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
-                mainMenuTitle2: "Welcome to tax refund self-service kiosk.",
-                mainMenuTitle3: "Please select language",
-
-                lang01: '中文',
+                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle2: "Welcome to Tax Refund Application Kiosk.",
+                mainMenuTitle3: "Please select language to start",
+                lang01: '繁體中文',
+                lang13: '简体中文',
                 lang02: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
@@ -157,14 +159,18 @@
             },
         },
 
-        //中文
+        // 繁體中文
         2: {
+            common: {
+                indexPage: '首頁',
+                prePage: '上一頁'
+            },
             mainMenu: {
                 mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk.",
                 mainMenuTitle3: "Please select language",
-
-                lang01: '中文',
+                lang01: '繁體中文',
+                lang13: '简体中文',
                 lang02: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
@@ -180,14 +186,14 @@
                 remindTitle2: '離開退稅機前務必取得退稅表單',
                 remindTitle3: '請準備好您的護照/入臺證、購物發票開始辦理退稅',
                 btTitle: '確認，開始退稅',
-                toSelectDoc: 'selectDoc',
+                toSelectDoc: 'selectDoc'
             },
             selectDoc: {
                 selectTitle: '請選擇本次入境臺灣所使用證照',
                 passport: '護照',
                 permit: '入出境許可證',
                 toScanPassport: 'scanPassport',
-                toScanPermit: 'scanPermit',
+                toScanPermit: 'scanPermit'
             },
             scanPassport: {
                 scanPassportTitle: '請掃描您的護照',
@@ -240,6 +246,120 @@
                 scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 toDetail: 'detail',
                 toSign: 'sign',                
+            },
+            detail: {
+                detailTitle1: '您已輸入的購物發票',
+                detailTitle2: '上下滑動看更多',
+                detailTitle3: '發票號碼：',
+                detailTitle4: '品名/型號：',
+                detailTitle5: '單價/數量：',
+                detailTitle6: '含稅金額：',
+                btDetail1: '確認，回上一頁',
+                btDetail2: '刪除',
+                toScanQR: 'scanQRcode',
+            },
+            sign: {
+                signTitle1: '請於下方欄位簽名',
+                signTitle2: ' 秒',
+                btSign1: '清除簽名',
+                btSign2: '確認簽名',
+                toSuccess: 'success',
+            },
+            success: {
+                successTitle1: '申請成功，明細表列印中，請稍後！',
+                successTitle2: '小額退稅者請持明細表至服務櫃檯領取退稅款現金。',
+                successTitle3: '大額退稅請至出境機場/港口領取您的退稅款，',
+                successTitle4: '或洽101館內市區特約退稅櫃檯。',
+                toHomeText: '服務首頁',
+            },
+        },
+        // 簡體中文
+        13: {
+            mainMenu: {
+                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle2: "Welcome to tax refund self-service kiosk.",
+                mainMenuTitle3: "Please select language",
+                lang01: '繁體中文',
+                lang13: '简体中文',
+                lang02: 'English',
+                lang03: '日本語',
+                lang04: '한국어',
+                lang05: 'ไทย',
+                lang06: 'हिन्दी',
+                lang07: 'Español',
+                lang08: 'Le français',
+                lang09: 'русский',
+                lang10: 'Tiếng việt',
+            },
+            remind: {
+                remindTitle1: '提醒您',
+                remindTitle2: '离开退税机前请务必取得退税表单',
+                remindTitle3: '请准备好您的正本入境文件(护照/入台证)及购物发票开始办理退税',
+                btTitle: '确认，开始退税',
+                toSelectDoc: 'selectDoc',
+                indexPage:'首页',
+                prePage:'上一页'
+            },
+            selectDoc: {
+                selectTitle: '請選擇本次入境臺灣所使用證照',
+                passport: '護照',
+                permit: '入出境許可證',
+                toScanPassport: 'scanPassport',
+                toScanPermit: 'scanPermit',
+                indexPage: '首页',
+                prePage: '上一页'
+            },
+            scanPassport: {
+                scanPassportTitle: '請掃描您的護照',
+                scanError: '掃描錯誤，請重新操作',
+                toError: 'error',
+                toPreScanQR: 'preScanQRcode',
+                scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+            },
+            scanPermit: {
+                scanPermitTitle: '請掃描您的入臺證條碼',
+                scanError: '掃描錯誤，請重新操作',
+                toError: 'error',
+                toPreScanQR: 'preScanQRcode',
+                putPermit: '請放置入臺證',
+                permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+            },
+            error: {
+                errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
+                errorTitle2: '將有專人為您服務，謝謝',
+                toHomeText: '回服務首頁',
+            },
+            preScanQRcode: {
+                preScanQRcodeTitle: '準備掃描購物發票QR Code',
+                btScanQRcode: '開始掃描',
+                toScanQR: 'scanQRcode',
+            },
+            scanQRcode: {
+                scanQRcodeTitle1: '請掃描您的購物發票',
+
+                scanQRcodeTitle2: '您今日已辦理退稅',
+                scanQRcodeTitle4: '元',
+
+                scanQRcodeTitle5: '發票掃描',
+                scanQRcodeTitle6: '消費金額',
+                scanQRcodeTitle7: '退稅淨額',
+
+                scanQRcodeTitle8: '張',
+                scanQRcodeTitle9: '新台幣',
+                scanQRcodeTitle10: '新台幣',
+
+                scanQRcodeTitle14: '詳細資訊',
+                scanQRcodeTitle15: '確認',
+
+                scanQRError1: '非本日發票無法申請退稅，<br>請掃描下一張發票',
+                scanQRError2: '請掃描下一張發票',
+                scanQRErrorDup: '發票重複輸入，<br>請掃描下一張發票',
+                scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                toDetail: 'detail',
+                toSign: 'sign',
             },
             detail: {
                 detailTitle1: '您已輸入的購物發票',

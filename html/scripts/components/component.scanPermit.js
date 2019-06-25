@@ -90,5 +90,10 @@ Vue.component('component-scanPermit-navBar', {
     goHome: function() {
       kiosk.API.goToNext('mainMenu');
     }
+  },
+  computed: {
+    wording: function() {
+      return kiosk.wording[this.culture].common;
+    }
   }
 });
