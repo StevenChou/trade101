@@ -183,13 +183,13 @@
             },
             remind: {
                 remindTitle1: '提醒您',
-                remindTitle2: '離開退稅機前務必取得退稅表單',
-                remindTitle3: '請準備好您的護照/入臺證、購物發票開始辦理退稅',
+                remindTitle2: '離開退稅機前請務必取得退稅表單',
+                remindTitle3: '請準備好您的正本入境文件(護照/入臺證)及購物發票開始辦理退稅',
                 btTitle: '確認，開始退稅',
                 toSelectDoc: 'selectDoc'
             },
             selectDoc: {
-                selectTitle: '請選擇本次入境臺灣所使用證照',
+                selectTitle: '請選擇本次入境臺灣所使用證件',
                 passport: '護照',
                 permit: '入出境許可證',
                 toScanPassport: 'scanPassport',
@@ -197,7 +197,7 @@
             },
             scanPassport: {
                 scanPassportTitle: '請掃描您的護照',
-                scanError: '掃描錯誤，請重新操作',
+                scanError: '無法辨識，請重新掃描護照',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
                 scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
@@ -206,7 +206,7 @@
             },
             scanPermit: {
                 scanPermitTitle: '請掃描您的入臺證條碼',
-                scanError: '掃描錯誤，請重新操作',
+                scanError: '無法辨識，請重新掃描入臺證',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
                 putPermit:'請放置入臺證',
@@ -219,12 +219,12 @@
                 toHomeText: '回服務首頁',
             },
             preScanQRcode: {
-                preScanQRcodeTitle: '準備掃描購物發票QR Code',
+                preScanQRcodeTitle: '準備掃描購物發票明細條碼',
                 btScanQRcode: '開始掃描',
                 toScanQR: 'scanQRcode',
             },
             scanQRcode: {
-                scanQRcodeTitle1: '請掃描您的購物發票',
+                scanQRcodeTitle1: '請掃描您的購物發票明細條碼',
 
                 scanQRcodeTitle2: '您今日已辦理退稅',
                 scanQRcodeTitle4: '元',
@@ -240,7 +240,7 @@
                 scanQRcodeTitle14: '詳細資訊',
                 scanQRcodeTitle15: '確認',
 
-                scanQRError1: '非本日發票無法申請退稅，<br>請掃描下一張發票',
+                scanQRError1: '此發票明細無法退稅，<br>請掃描下一張發票',
                 scanQRError2: '請掃描下一張發票',
                 scanQRErrorDup:'發票重複輸入，<br>請掃描下一張發票',
                 scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
@@ -255,7 +255,7 @@
                 detailTitle5: '單價/數量：',
                 detailTitle6: '含稅金額：',
                 btDetail1: '確認，回上一頁',
-                btDetail2: '刪除',
+                btDetail2: '刪除勾選發票',
                 toScanQR: 'scanQRcode',
             },
             sign: {
@@ -270,7 +270,7 @@
                 successTitle2: '小額退稅者請持明細表至服務櫃檯領取退稅款現金。',
                 successTitle3: '大額退稅請至出境機場/港口領取您的退稅款，',
                 successTitle4: '或洽101館內市區特約退稅櫃檯。',
-                toHomeText: '服務首頁',
+                toHomeText: '回服務首頁',
             },
         },
         // 簡體中文
