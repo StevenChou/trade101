@@ -37,8 +37,12 @@ Vue.component('component-sign-main', {
       External.TradevanKioskCommon.CommonService.Sign(
         JSON.stringify(data),
         function(res) {
-          alert(JSON.stringify(res));
-        },
+          // TODO 狀態判斷
+          alert('>>> 成功開立:' + JSON.stringify(res));
+          this.handleMouseDown(this.wording.toSuccess);
+
+          // TODO 何時導到錯誤頁面
+        }.bind(this),
         function() {}
       );
 
@@ -231,6 +235,11 @@ Vue.component('component-sign-navBar', {
     },
     goHome: function() {
       kiosk.API.goToNext('mainMenu');
+    }
+  },
+  computed: {
+    wording: function() {
+      return kiosk.wording[this.culture].common;
     }
   }
 });

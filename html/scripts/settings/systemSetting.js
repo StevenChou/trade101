@@ -166,7 +166,7 @@
                 prePage: '上一頁'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
+                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk.",
                 mainMenuTitle3: "Please select language",
                 lang01: '繁體中文',
