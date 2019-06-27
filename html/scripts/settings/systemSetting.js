@@ -517,12 +517,16 @@
 
         //韓文
         4: {
+            common: {
+                indexPage: '홈',
+                prePage: '이전'
+            },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
-                mainMenuTitle2: "Welcome to tax refund self-service kiosk.",
+                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
-
-                lang01: '中文',
+                lang01: '繁體中文',
+                lang13: '简体中文',
                 lang02: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
@@ -534,93 +538,100 @@
                 lang10: 'Tiếng việt',
             },
             remind: {
-                remindTitle1: '한국어提醒您',
-                remindTitle2: '한국어離開退稅機前務必取得退稅表單',
-                remindTitle3: '한국어請準備好您的護照/入臺證、購物發票開始辦理退稅',
-                btTitle: '한국어開始退稅',
-                toSelectDoc: 'selectDoc',
+                remindTitle1: '',
+                remindTitle2: '주의 : 세금환급기를 떠나기 전에 반드시 세금환급증을 받으십시오.',
+                remindTitle3: '귀하의 입국서류 원본(여권/타이완 입국증) 및 쇼핑 영수증을 준비하고 세금환급 절차를 시작하십시오.',
+                btTitle: '확인, 세금환급 시작',
+                toSelectDoc: 'selectDoc'
             },
             selectDoc: {
-                selectTitle: '한국어請選擇本次入境臺灣所使用證照',
-                passport: '한국어護照',
-                permit: '한국어許可證',
+                selectTitle: '이번 타이완 입국 시에 사용하신 증명서를 선택하세요',
+                passport: '여권',
+                permit: '출입국 허가증',
                 toScanPassport: 'scanPassport',
-                toScanPermit: 'scanPermit',
+                toScanPermit: 'scanPermit'
             },
             scanPassport: {
-                scanPassportTitle: '한국어請掃描您的護照',
-                scanError: '한국어掃描錯誤，請重新操作',
+                scanPassportTitle: '여권을 스캔하세요',
+                scanError: '인식할 수 없습니다. 여권을 다시 스캔하세요',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
+                scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             scanPermit: {
-                scanPermitTitle: '한국어請掃描您的入臺證條碼',
-                scanError: '한국어掃描錯誤，請重新操作',
+                scanPermitTitle: '타이완 입국증 바코드를 스캔하세요',
+                scanError: '인식할 수 없습니다. 타이완 입국증을 다시 스캔하세요',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
+                putPermit: '請放置入臺證',
+                permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '한국어的身分資料及發票至服務中心101號櫃台，',
-                errorTitle2: '한국어將有專人為您服務，謝謝',
-                toHomeText: '한국어服務首頁',
+                errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
+                errorTitle2: '將有專人為您服務，謝謝',
+                toHomeText: '回服務首頁',
             },
             preScanQRcode: {
-                preScanQRcodeTitle: '한국어準備掃描購物發票QR Code',
-                btScanQRcode: '한국어開始掃描',
+                preScanQRcodeTitle: '쇼핑 영수증 명세 바코드 스캔 준비',
+                btScanQRcode: '스캔 시작',
                 toScanQR: 'scanQRcode',
             },
             scanQRcode: {
-                scanQRcodeTitle1: '한국어請掃描您的購物發票',
+                scanQRcodeTitle1: '쇼핑 영수증 명세 바코드를 스캔하세요',
 
-                scanQRcodeTitle2: '한국어您今日已辦理退稅',
+                scanQRcodeTitle2: '금일 NT$ ',
+                scanQRcodeTitle4: '이 환급 처리되었습니다',
 
-                scanQRcodeTitle4: '元',
+                scanQRcodeTitle5: '영수증 스캔',
+                scanQRcodeTitle6: '소비금액',
+                scanQRcodeTitle7: '순 환급금',
 
-                scanQRcodeTitle5: '發票掃描',
-                scanQRcodeTitle6: '消費金額',
-                scanQRcodeTitle7: '退稅淨額',
+                scanQRcodeTitle8: '장',
+                scanQRcodeTitle9: 'NT$',
+                scanQRcodeTitle10: 'NT$',
 
-                scanQRcodeTitle8: '張',
-                scanQRcodeTitle9: '新台幣',
-                scanQRcodeTitle10: '新台幣',
+                scanQRcodeTitle14: '상세정보',
+                scanQRcodeTitle15: '확인',
 
-                scanQRcodeTitle14: '詳細資訊',
-                scanQRcodeTitle15: '確認',
-
-                scanQRError1: '한국어非本日發票無法申請退稅，',
-                scanQRError2: '請掃描下一張發票',
+                scanQRError1: '세금을 환급할 수 없는 영수증 명세입니다.<br>다음 장을 스캔하세요',
+                scanQRError2: '다음 장을 스캔하세요',
+                scanQRErrorDup: '發票重複輸入，<br>다음 장을 스캔하세요',
+                scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
             detail: {
-                detailTitle1: '한국어您已輸入的購物發票',
-                detailTitle2: '上下滑動看更多',
-                detailTitle3: '한국어號碼：',
-                detailTitle4: '한品名/型號：',
-                detailTitle5: '한單價/數量：',
-                detailTitle6: '한含稅金額：',
-                btDetail1: '確認，回上一頁',
-                btDetail2: '刪除',
+                detailTitle1: '이미 입력하신 쇼핑 영수증입니다',
+                detailTitle2: '더 보려면 위아래로 스와이프 하세요',
+                detailTitle3: '영수증번호：',
+                detailTitle4: '品名/型號：',
+                detailTitle5: '單價/數量：',
+                detailTitle6: '세금 포함 금액：',
+                btDetail1: '확인, 이전',
+                btDetail2: '영수증 체크 표시 삭제',
                 toScanQR: 'scanQRcode',
             },
             sign: {
-                signTitle1: '한국어請於下方欄位簽名',
-                signTitle2: ' 秒',
-                btSign1: '清除簽名',
-                btSign2: '確認簽名',
+                signTitle1: '아래 칸에 서명하세요',
+                signTitle2: ' 초',
+                btSign1: '서명 지우기',
+                btSign2: '서명 확인',
                 toSuccess: 'success',
             },
             success: {
-                successTitle1: '한국어申請成功，明細表列印中，請稍後！',
+                successTitle1: '申請成功，明細表列印中，請稍後！',
                 successTitle2: '小額退稅者請持明細表至服務櫃檯領取退稅款現金。',
                 successTitle3: '大額退稅請至出境機場/港口領取您的退稅款，',
                 successTitle4: '或洽101館內市區特約退稅櫃檯。',
-                toHomeText: '한국어服務首頁',
+                toHomeText: '홈으로 돌아가기',
             },
         },
 
         ///////////////////////////
-
+        // 
         5: {
             mainMenu: {
                 mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",

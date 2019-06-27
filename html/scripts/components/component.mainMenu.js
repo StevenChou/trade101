@@ -48,13 +48,8 @@ Vue.component('component-common-langmenu', {
         [
           {
             next: 'remind',
-            culture: '555',
-            name: kiosk.wording[this.culture].mainMenu.lang05
-          },
-          {
-            next: 'remind',
-            culture: '666',
-            name: kiosk.wording[this.culture].mainMenu.lang06
+            culture: 'KOKR',
+            name: kiosk.wording[this.culture].mainMenu.lang04
           },
           {
             next: 'remind',
@@ -63,8 +58,13 @@ Vue.component('component-common-langmenu', {
           },
           {
             next: 'remind',
-            culture: '888',
-            name: kiosk.wording[this.culture].mainMenu.lang08
+            culture: '555',
+            name: kiosk.wording[this.culture].mainMenu.lang05
+          },
+          {
+            next: 'remind',
+            culture: '666',
+            name: kiosk.wording[this.culture].mainMenu.lang06
           }
         ],
         [
@@ -80,8 +80,8 @@ Vue.component('component-common-langmenu', {
           },
           {
             next: 'remind',
-            culture: 'KOKR',
-            name: kiosk.wording[this.culture].mainMenu.lang04
+            culture: '888',
+            name: kiosk.wording[this.culture].mainMenu.lang08
           }
         ]
       ]
