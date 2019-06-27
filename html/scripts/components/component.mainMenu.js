@@ -53,7 +53,7 @@ Vue.component('component-common-langmenu', {
           },
           {
             next: 'remind',
-            culture: '777',
+            culture: 'ESES',
             name: kiosk.wording[this.culture].mainMenu.lang07
           },
           {
