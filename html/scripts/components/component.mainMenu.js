@@ -58,7 +58,7 @@ Vue.component('component-common-langmenu', {
           },
           {
             next: 'remind',
-            culture: '555',
+            culture: 'THTH',
             name: kiosk.wording[this.culture].mainMenu.lang05
           },
           {
