@@ -63,27 +63,27 @@ Vue.component('component-common-langmenu', {
           },
           {
             next: 'remind',
-            culture: '666',
+            culture: 'ARAE',
             name: kiosk.wording[this.culture].mainMenu.lang06
           }
-        ],
-        [
-          {
-            next: 'remind',
-            culture: '999',
-            name: kiosk.wording[this.culture].mainMenu.lang09
-          },
-          {
-            next: 'remind',
-            culture: '000',
-            name: kiosk.wording[this.culture].mainMenu.lang10
-          },
-          {
-            next: 'remind',
-            culture: '888',
-            name: kiosk.wording[this.culture].mainMenu.lang08
-          }
         ]
+        // [
+        //   {
+        //     next: 'remind',
+        //     culture: '999',
+        //     name: kiosk.wording[this.culture].mainMenu.lang09
+        //   },
+        //   {
+        //     next: 'remind',
+        //     culture: '000',
+        //     name: kiosk.wording[this.culture].mainMenu.lang10
+        //   },
+        //   {
+        //     next: 'remind',
+        //     culture: '888',
+        //     name: kiosk.wording[this.culture].mainMenu.lang08
+        //   }
+        // ]
       ]
     };
   },
