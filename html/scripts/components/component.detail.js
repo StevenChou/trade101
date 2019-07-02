@@ -53,6 +53,25 @@ Vue.component('component-detail-main', {
   computed: {
     wording: function() {
       return kiosk.wording[this.culture].detail;
+    },
+    fontStyle: function() {
+      const style = {};
+      alert('hihi' + this.culture);
+      // 英文
+      if (this.culture === 1) {
+        style.fontSize = '18px';
+        style.position = 'absolute';
+        style.right = '15px';
+        style.top = '25px';
+        // 中文
+      } else if (this.culture === 2) {
+        style.fontSize = '24px';
+        style.position = 'absolute';
+        style.right = '65px';
+        style.top = '20px';
+      }
+
+      return style;
     }
   },
   mounted: function() {

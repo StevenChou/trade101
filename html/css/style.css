@@ -134,6 +134,20 @@
   margin-left: 7px;
 }
 
+.textHome__en {
+  display: inline;
+  font: bold 1.5em Microsoft JhengHei;
+  margin-left: 7px;
+  color: red;
+}
+
+.textHome__tw {
+  display: inline;
+  font: bold 1.5em Microsoft JhengHei;
+  margin-left: 7px;
+  color: blue;
+}
+
 .text-mid {
   text-align: center;
 }
@@ -288,6 +302,22 @@ h3 {
 }
 
 .nav-bar-lang {
+  background: #fff;
+  border-radius: 35px;
+  padding: 17px 17px;
+  margin: 24px 0 0 15px;
+  width: 180px;
+}
+
+.nav__bar__en {
+  background: #fff;
+  border-radius: 35px;
+  padding: 17px 17px;
+  margin: 24px 0 0 15px;
+  width: 250px;
+}
+
+.nav__bar__tw {
   background: #fff;
   border-radius: 35px;
   padding: 17px 17px;

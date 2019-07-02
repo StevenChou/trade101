@@ -17,9 +17,10 @@
                   </td>
               </td>
               <td>
-                  <div @click.stop.prevent="" @mousedown="handleItemDelete" class="logoImg10">
-                      <img class="imgDelete" src="img/delete.png" >
-                      <b v-bind:style="{color:item.color}" class="text-subTitle2-2" > {{wording.btDetail2}} </b>
+                  <div @click.stop.prevent="" @mousedown="handleItemDelete" class="logoImg10" style="position: relative">
+                      <img class="imgDelete" src="img/delete.png" style="position: absolute; left: 30px;">
+                      <!-- <b v-bind:style="{color:item.color}" class="text-subTitle2-2" :style="[fontStyle]"> {{wording.btDetail2}} </b> -->
+                      <span class="text-subTitle2-2" :style="[fontStyle]" v-html="wording.btDetail2"></span>
                   </div>
               </td>
           </tr>

@@ -123,7 +123,7 @@
             scanQRcode: {
                 scanQRcodeTitle1: 'Please scan barcode in your invoices.',
 
-                scanQRcodeTitle2: 'Applied Tax Refund Amount Today',
+                scanQRcodeTitle2: 'Applied Tax Refund Amount Today ',
                 scanQRcodeTitle4: ' ',
 
                 scanQRcodeTitle5: 'Scanned Invoices',

@@ -259,6 +259,20 @@ Vue.component('component-scanQRcode-main', {
 Vue.component('component-scanQRcode-navBar', {
   props: ['culture', 'model'],
   template: '#template-common-navBar',
+  data: function() {
+    return {
+      cssRightBtn: {
+        class1: 'nav',
+        class2: 'navbar-nav',
+        class3: 'navbar-right'
+      },
+      cssLeftBtn: {
+        class1: 'nav',
+        class2: 'navbar-nav',
+        class3: 'navbar-left'
+      }
+    };
+  },
   methods: {
     backBtn: function() {
       if (!kiosk.app.$data.lockBtn) {
@@ -274,6 +288,18 @@ Vue.component('component-scanQRcode-navBar', {
   computed: {
     wording: function() {
       return kiosk.wording[this.culture].common;
+    },
+    navHomeBtn: function() {
+      return {
+        textHome__en: this.culture === 1 ? true : false,
+        textHome__tw: this.culture === 2 ? true : false
+      };
+    },
+    navBtnSize: function() {
+      return {
+        nav__bar__en: this.culture === 1 ? true : false,
+        nav__bar__tw: this.culture === 2 ? true : false
+      };
     }
   }
 });

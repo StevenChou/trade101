@@ -1,17 +1,17 @@
 <!--杝醒頝-->
 <script type="text/x-template" id="template-remind-main">
-    <div class="container">
-        <div class="mgT50-mid"><img class="imgHW" src="img/taipei101.png"></div>
-        <div class="mgT60 text-center">
-            <div class="col-xs-12">
-                <div class="text-title text-mid">{{wording.remindTitle1}}</div>
-                <div class="text-subTitle text-mid">{{wording.remindTitle2}}<br><br>{{wording.remindTitle3}}</div>
-            </div>
-            <div class="seven-cols col-xs-3 mgBtLeft">
-                    <div @click.stop.prevent="" @mousedown="handleMouseDown(wording.toSelectDoc)" class="logoImg2">
-                        <b v-bind:style="{color:item.color}" class="text-subTitle2" > {{wording.btTitle}} </b>
-                    </div>
-            </div>
-        </div>
-    </div>
+  <div class="container">
+      <div class="mgT50-mid"><img class="imgHW" src="img/taipei101.png"></div>
+      <div class="mgT60 text-center">
+          <div class="col-xs-12">
+              <div class="text-title text-mid">{{wording.remindTitle1}}</div>
+              <div class="text-subTitle text-mid">{{wording.remindTitle2}}<br><br>{{wording.remindTitle3}}</div>
+          </div>
+          <div class="seven-cols col-xs-3 mgBtLeft">
+                  <div @click.stop.prevent="" @mousedown="handleMouseDown(wording.toSelectDoc)" class="logoImg2">
+                      <b v-bind:style="{color:item.color}" class="text-subTitle2" > {{wording.btTitle}} </b>
+                  </div>
+          </div>
+      </div>
+  </div>
 </script>
