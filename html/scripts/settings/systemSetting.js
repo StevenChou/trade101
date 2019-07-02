@@ -111,9 +111,9 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: 'en請攜帶您的身分資料及發票至服務中心101號櫃台，',
-                errorTitle2: 'en將有專人為您服務，謝謝',
-                toHomeText: 'en回服務首頁',
+                errorTitle: 'Please proceed to Customer Service Center with your travel document and invoices issued by Taipei 101 for application, thank you!',
+                errorTitle2: '',
+                toHomeText: 'Back to Homepage',
             },
             preScanQRcode: {
                 preScanQRcodeTitle: 'Prepare to scan your invoices issued by Taipei  101 Mall.',
@@ -226,8 +226,8 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
-                errorTitle2: '將有專人為您服務，謝謝',
+                errorTitle: '請攜帶您的入境文件及發票至退稅櫃檯，',
+                errorTitle2: '將有專人為您服務，謝謝!',
                 toHomeText: '回服務首頁',
             },
             preScanQRcode: {
@@ -340,9 +340,9 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
-                errorTitle2: '將有專人為您服務，謝謝',
-                toHomeText: '回服務首頁',
+                errorTitle: '请携带您的入境文件及发票至退税柜台，',
+                errorTitle2: '将有专人为您服务，谢谢!',
+                toHomeText: '回服务首页',
             },
             preScanQRcode: {
                 preScanQRcodeTitle: '准备扫描购物发票明细条码',
@@ -455,9 +455,9 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
-                errorTitle2: '將有專人為您服務，謝謝',
-                toHomeText: '回服務首頁',
+                errorTitle: 'ご自身の入国証明書類と商品購入レシートをもって税金還付受付カウンターへお越しください。専門スタッフが対応いたします。',
+                errorTitle2: '',
+                toHomeText: 'サービスのホーム画面に戻る',
             },
             preScanQRcode: {
                 preScanQRcodeTitle: '商品購入レシートのQRコードをスキャンする準備をしてください',
@@ -570,9 +570,9 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
-                errorTitle2: '將有專人為您服務，謝謝',
-                toHomeText: '回服務首頁',
+                errorTitle: '입국 서류 및 영수증을 가지고 세금환급 카운터로 가시면 담당자가 서비스를 제공할 것입니다. 감사합니다!',
+                errorTitle2: '',
+                toHomeText: '홈으로 돌아가기',
             },
             preScanQRcode: {
                 preScanQRcodeTitle: '쇼핑 영수증 명세 바코드 스캔 준비',
@@ -686,9 +686,9 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
-                errorTitle2: '將有專人為您服務，謝謝',
-                toHomeText: '回服務首頁',
+                errorTitle: 'โปรดนำเอกสารที่คุณสำแดงตอนเข้ามาในไต้หวันและใบแจ้งหนี้ของคุณไปที่เคาน์เตอร์ขอคืนภาษี จะมีคนคอยให้บริการท่าน ขอบคุณครับ!',
+                errorTitle2: '',
+                toHomeText: 'กลับไปที่บริการหน้าแรก',
             },
             preScanQRcode: {
                 preScanQRcodeTitle: 'เตรียมที่จะสแกนบาร์โค้ดรายละเอียดใบแจ้งหนี้ช้อปปิ้ง',
@@ -801,9 +801,9 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
-                errorTitle2: '將有專人為您服務，謝謝',
-                toHomeText: '回服務首頁',
+                errorTitle: 'يرجى إحضار وثائق الدخول لك والفاتورات إلى الاستقبال لاسترداد الضريبة، سنعين الموظف المتخصص ليخدمك، شكرا!',
+                errorTitle2: '',
+                toHomeText: 'العودة إلى الصفحة الرئيسية للخدمة',
             },
             preScanQRcode: {
                 preScanQRcodeTitle: 'الاستعداد للمسح الضوئي لشفرة الشريطية على قاتورات البضائع',
@@ -915,9 +915,9 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '請攜帶您的身分資料及發票至服務中心101號櫃台，',
-                errorTitle2: '將有專人為您服務，謝謝',
-                toHomeText: '回服務首頁',
+                errorTitle: 'Lleve consigo el documento de entrada y la factura al mostrador de devolución de impuestos, y una persona especializada le atenderá. ¡Muchas gracias!',
+                errorTitle2: '',
+                toHomeText: 'Regresar a la página principal del servicio',
             },
             preScanQRcode: {
                 preScanQRcodeTitle: 'Prepare escaneado de código de barras de la factura de compra',

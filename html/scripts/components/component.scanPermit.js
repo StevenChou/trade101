@@ -4,7 +4,9 @@ Vue.component('component-scanPermit-main', {
   props: ['model', 'culture'],
   data: function() {
     return {
-      megCode: 'putPermit'
+      megCode: 'putPermit',
+      scanCount: 0,
+      fixedCount: 5
     };
   },
   methods: {
@@ -21,23 +23,72 @@ Vue.component('component-scanPermit-main', {
       );
     },
     StartScanner: function() {
+      this.scanCount++;
+      alert('>>> 第 ' + this.scanCount + '次掃描入臺證');
+      if (this.scanCount === this.fixedCount) {
+        kiosk.API.goToNext('error');
+        return;
+      }
+
       const scanPermit = this;
       kiosk.API.Device.Scanner.startScanner('', function(res) {
-        alert(JSON.stringify(res));
-        if (res.match(/^[a-zA-Z]{2}[-]?[0-9]{8}/g)) {
-          alert('QR code:' + res.substr(0, 10) + res.substr(17, 4));
-        } else {
-          alert('Bar code:' + res.substr(5, 14));
-        }
+        // if (res.match(/^[a-zA-Z]{2}[-]?[0-9]{8}/g)) {
+        //   alert('QR code:' + res.substr(0, 10) + res.substr(17, 4));
+        // } else {
+        //   alert('Bar code:' + res.substr(5, 14));
+        // }
+        alert('>>> res:' + res);
 
-        scanPermit.megCode = 'permitCerting';
-        setTimeout(function() {
-          scanPermit.megCode = 'permitCerted';
-          setTimeout(function() {
-            kiosk.API.goToNext(scanPermit.wording['toPreScanQR']);
-          }, 1000);
-        }, 1000);
+        //查詢移民署
+        const postData = {
+          passportNo: res,
+          country: 'CN'
+        };
+
+        alert('>>> postData:' + JSON.stringify(postData));
+        External.TradevanKioskCommon.CommonService.CallImm(
+          JSON.stringify(postData),
+          function(res) {
+            // alert('>>> json string:' + res);
+            const resObj = JSON.parse(res);
+            // alert(
+            //   '>>> 回傳資訊:' +
+            //     resObj.result['message'] +
+            //     '---' +
+            //     resObj.result['status']
+            // );
+
+            // succ
+            if (resObj && resObj.result['status'] === '000') {
+              alert('>>> api成功');
+              // scanPassportObj.lock = true;
+
+              scanPermit.megCode = 'passportCerted';
+
+              // global data --- 儲存護照相關資訊
+              scanPermit.storeUserData(jsonObj, resObj);
+
+              scanPermit.megCode = 'permitCerting';
+              setTimeout(function() {
+                scanPermit.megCode = 'permitCerted';
+                setTimeout(function() {
+                  kiosk.API.goToNext(scanPermit.wording['toPreScanQR']);
+                }, 1000);
+              }, 1000);
+            } else {
+              alert('>>> help me!! gg');
+              scanPermit.StartScanner();
+            }
+          },
+          function() {}
+        );
       });
+    },
+    storeUserData: function(passportObj, validationObj) {
+      kiosk.app.$data.userData['passportNo'] = passportObj['documentNumber'];
+      kiosk.app.$data.userData['country'] = passportObj['nationality'];
+      kiosk.app.$data.userData['dayAmtTotal'] =
+        validationObj.result['dayAmtTotal'];
     },
     StopScanner: function() {
       kiosk.API.Device.Scanner.stopScanner();

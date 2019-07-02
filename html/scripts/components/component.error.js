@@ -1,24 +1,18 @@
 //Body
 Vue.component('component-error-main', {
-    template: '#template-error-main',
-    props: ['model','culture'],
- 
-
-    methods: {
-        // Btn Click
-        goHome: function () {
-            kiosk.API.goToNext('mainMenu');
-        },
-
-       
-        
-    },
-
-    computed: {
-        wording: function () {
-            return kiosk.wording[this.culture].error;
-        },
+  template: '#template-error-main',
+  props: ['model', 'culture'],
+  methods: {
+    // Btn Click
+    goHome: function() {
+      kiosk.API.goToNext('mainMenu');
     }
+  },
+  computed: {
+    wording: function() {
+      return kiosk.wording[this.culture].error;
+    }
+  }
 });
 
 //Head

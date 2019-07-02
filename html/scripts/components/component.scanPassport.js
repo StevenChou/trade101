@@ -6,7 +6,9 @@ Vue.component('component-scanPassport-main', {
     return {
       lock: false,
       myInterval: null,
-      megCode: ''
+      megCode: '',
+      scanCount: 0,
+      fixedCount: 5
     };
   },
   methods: {
@@ -19,9 +21,13 @@ Vue.component('component-scanPassport-main', {
       if (!scanPassportObj.lock) {
         // 護照掃描中...
         scanPassportObj.megCode = 'scanPassportLoading';
+
         kiosk.API.Device.MMM.GetData(
           function(res) {
             if (!scanPassportObj.lock) {
+              alert('>>> 第 ' + scanPassportObj.scanCount + '次掃描護照');
+              scanPassportObj.lock = true;
+
               const jsonObj = JSON.parse(res['jsonStr']);
 
               if (
@@ -58,7 +64,8 @@ Vue.component('component-scanPassport-main', {
                     // succ
                     if (resObj && resObj.result['status'] === '000') {
                       // alert('>>> api成功');
-                      scanPassportObj.lock = true;
+                      // scanPassportObj.lock = true;
+
                       scanPassportObj.megCode = 'passportCerted';
 
                       // global data --- 儲存護照相關資訊
@@ -71,6 +78,17 @@ Vue.component('component-scanPassport-main', {
                       }, 1500);
                     } else {
                       // alert('>>> 重新掃描');
+                      scanPassportObj.lock = false;
+
+                      scanPassportObj.scanCount++;
+
+                      if (
+                        scanPassportObj.scanCount === scanPassportObj.fixedCount
+                      ) {
+                        kiosk.API.goToNext('error');
+                        scanPassportObj.lock = true;
+                        return;
+                      }
                       // setTimeout(function() {
                       //   kiosk.API.goToNext(
                       //     scanPassportObj.wording['toPreScanQR']
