@@ -41,7 +41,7 @@ Vue.component('component-scanQRcode-main', {
             applyMainList: this.transformItems()
           };
 
-          alert('>>> sendData:' + JSON.stringify(data));
+          // alert('>>> sendData:' + JSON.stringify(data));
 
           // [ TODO ] 沒有品項，lock btn!!
 
@@ -197,11 +197,11 @@ Vue.component('component-scanQRcode-main', {
       scanQRcode.invoiceItems.forEach(function(item) {
         sendData.rows.push(item);
       });
-      alert('>>> call c# refund:' + JSON.stringify(sendData));
+      // alert('>>> call c# refund:' + JSON.stringify(sendData));
       External.TradevanKioskCommon.CommonService.CalRefund(
         JSON.stringify(sendData),
         function(res) {
-          alert('>>> refundAmt:' + JSON.parse(res).result.refundAmt);
+          // alert('>>> refundAmt:' + JSON.parse(res).result.refundAmt);
           scanQRcode.netTaxRefund = JSON.parse(res).result.refundAmt;
         },
         function() {}
@@ -225,10 +225,10 @@ Vue.component('component-scanQRcode-main', {
 
       if (this.isFromQRCode(invData)) {
         invNo = invData.substr(0, 10) + invData.substr(17, 4);
-        alert('>>> qrcode:' + invNo);
+        // alert('>>> qrcode:' + invNo);
       } else {
         invNo = invData.substr(5, 14);
-        alert('>>> barcode:' + invNo);
+        // alert('>>> barcode:' + invNo);
       }
 
       // TODO: 隨機碼
@@ -260,10 +260,26 @@ Vue.component('component-scanQRcode-main', {
     }
   },
   mounted: function() {
+    const scanQRcode = this;
     this.invoiceItems = kiosk.app.$data.invoiceItems;
     this.invoiceNum = kiosk.app.$data.invoiceNum;
     this.number = this.invoiceNum.length;
     this.amount = this.calcuAmt();
+
+    const sendData = {
+      rows: []
+    };
+    scanQRcode.invoiceItems.forEach(function(item) {
+      sendData.rows.push(item);
+    });
+    External.TradevanKioskCommon.CommonService.CalRefund(
+      JSON.stringify(sendData),
+      function(res) {
+        // alert('>>> refundAmt:' + JSON.parse(res).result.refundAmt);
+        scanQRcode.netTaxRefund = JSON.parse(res).result.refundAmt;
+      },
+      function() {}
+    );
 
     this.StartScanner();
   },

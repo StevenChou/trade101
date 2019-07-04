@@ -25,11 +25,10 @@ Vue.component('component-scanPassport-main', {
         kiosk.API.Device.MMM.GetData(
           function(res) {
             if (!scanPassportObj.lock) {
-              alert('>>> 第 ' + scanPassportObj.scanCount + '次掃描護照');
+              // alert('>>> 第 ' + (scanPassportObj.scanCount + 1) + '次掃描護照');
               scanPassportObj.lock = true;
 
               const jsonObj = JSON.parse(res['jsonStr']);
-
               if (
                 jsonObj['nationality'] !== '' &&
                 jsonObj['documentNumber'] !== ''
@@ -89,6 +88,7 @@ Vue.component('component-scanPassport-main', {
                         scanPassportObj.lock = true;
                         return;
                       }
+
                       // setTimeout(function() {
                       //   kiosk.API.goToNext(
                       //     scanPassportObj.wording['toPreScanQR']
@@ -98,6 +98,15 @@ Vue.component('component-scanPassport-main', {
                   },
                   function() {}
                 );
+              } else {
+                // 掃描不到 ---> 要重新啟動護照機!!
+                scanPassportObj.lock = false;
+                scanPassportObj.scanCount++;
+                if (scanPassportObj.scanCount === scanPassportObj.fixedCount) {
+                  kiosk.API.goToNext('error');
+                  scanPassportObj.lock = true;
+                  return;
+                }
               }
             }
           },
@@ -121,7 +130,7 @@ Vue.component('component-scanPassport-main', {
     stopPassportScan: function() {
       kiosk.API.Device.MMM.StopGet(
         function(res) {
-          alert('關閉護照機');
+          // alert('關閉護照機');
           // alert(JSON.stringify(res));
         },
         function() {}
