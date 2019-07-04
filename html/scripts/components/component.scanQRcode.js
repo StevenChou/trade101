@@ -190,6 +190,22 @@ Vue.component('component-scanQRcode-main', {
         // data
         scanQRcode.invoiceItems.push(invoiceItem);
       });
+
+      const sendData = {
+        rows: []
+      };
+      scanQRcode.invoiceItems.forEach(function(item) {
+        sendData.rows.push(item);
+      });
+      alert('>>> call c# refund:' + JSON.stringify(sendData));
+      External.TradevanKioskCommon.CommonService.CalRefund(
+        JSON.stringify(sendData),
+        function(res) {
+          alert('>>> refundAmt:' + JSON.parse(res).result.refundAmt);
+          scanQRcode.netTaxRefund = JSON.parse(res).result.refundAmt;
+        },
+        function() {}
+      );
     },
     transformItems: function() {
       // console.log('>>> old data:', this.invoiceItems);
@@ -238,6 +254,9 @@ Vue.component('component-scanQRcode-main', {
       return this.megCode !== ''
         ? kiosk.wording[this.culture].scanQRcode[this.megCode]
         : '';
+    },
+    taxRefund: function() {
+      return this.netTaxRefund;
     }
   },
   mounted: function() {
