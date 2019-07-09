@@ -500,7 +500,7 @@
                 toScanQR: 'scanQRcode',
             },
             sign: {
-                signTitle1: '請於下方欄位簽名',
+                signTitle1: '下の欄にご署名ください',
                 signTitle2: ' 秒',
                 btSign1: '署名をクリアする',
                 btSign2: '署名を確定する',
