@@ -257,6 +257,47 @@ Vue.component('component-scanQRcode-main', {
     },
     taxRefund: function() {
       return this.netTaxRefund;
+    },
+    btnSize: function() {
+      let fontSize = null;
+      switch (this.culture) {
+        case 3:
+          fontSize = 40;
+          break;
+        case 5:
+          fontSize = 40;
+          break;
+        case 7:
+          fontSize = 36;
+          break;
+        default:
+          fontSize = 48;
+      }
+      return {
+        fontSize: fontSize + 'px'
+      };
+    },
+    subTitle: function() {
+      let fontSize = null;
+      switch (this.culture) {
+        case 3:
+          fontSize = 26;
+          break;
+        case 5:
+          fontSize = 26;
+          break;
+        case 6:
+          fontSize = 26;
+          break;
+        case 7:
+          fontSize = 22;
+          break;
+        default:
+          fontSize = 32;
+      }
+      return {
+        fontSize: fontSize + 'px'
+      };
     }
   },
   mounted: function() {

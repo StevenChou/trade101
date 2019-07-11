@@ -54,7 +54,7 @@ Vue.component('component-detail-main', {
     wording: function() {
       return kiosk.wording[this.culture].detail;
     },
-    fontStyle: function() {
+    fontStyleRight: function() {
       const style = {};
       // alert('hihi' + this.culture);
       // 英文
@@ -77,33 +77,88 @@ Vue.component('component-detail-main', {
         style.top = '20px';
         // 日文
       } else if (this.culture === 3) {
-        style.fontSize = '24px';
+        style.fontSize = '18px';
         style.position = 'absolute';
-        style.right = '65px';
-        style.top = '20px';
+        style.right = '30px';
+        style.top = '15px';
         // 韓文
       } else if (this.culture === 4) {
-        style.fontSize = '24px';
+        style.fontSize = '20px';
         style.position = 'absolute';
-        style.right = '65px';
+        style.right = '30px';
         style.top = '20px';
         // 西班牙語
       } else if (this.culture === 7) {
-        style.fontSize = '24px';
+        style.fontSize = '18px';
         style.position = 'absolute';
-        style.right = '65px';
-        style.top = '20px';
+        style.right = '70px';
+        style.top = '15px';
         // 泰語
       } else if (this.culture === 5) {
-        style.fontSize = '24px';
+        style.fontSize = '18px';
         style.position = 'absolute';
         style.right = '65px';
         style.top = '20px';
         // 阿拉伯語
-      } else if (this.culture === 5) {
+      } else if (this.culture === 6) {
+        style.fontSize = '18px';
+        style.position = 'absolute';
+        style.right = '15px';
+        style.top = '20px';
+      }
+
+      return style;
+    },
+    fontStyleLeft: function() {
+      const style = {};
+      // alert('hihi' + this.culture);
+      // 英文
+      if (this.culture === 1) {
+        style.fontSize = '18px';
+        style.position = 'absolute';
+        style.right = '100px';
+        style.top = '25px';
+        // 繁體中文
+      } else if (this.culture === 2) {
         style.fontSize = '24px';
         style.position = 'absolute';
         style.right = '65px';
+        style.top = '20px';
+        // 簡體中文
+      } else if (this.culture === 13) {
+        style.fontSize = '24px';
+        style.position = 'absolute';
+        style.right = '65px';
+        style.top = '20px';
+        // 日文
+      } else if (this.culture === 3) {
+        style.fontSize = '18px';
+        style.position = 'absolute';
+        style.right = '30px';
+        style.top = '15px';
+        // 韓文
+      } else if (this.culture === 4) {
+        style.fontSize = '20px';
+        style.position = 'absolute';
+        style.right = '90px';
+        style.top = '20px';
+        // 西班牙語
+      } else if (this.culture === 7) {
+        style.fontSize = '18px';
+        style.position = 'absolute';
+        style.right = '30px';
+        style.top = '15px';
+        // 泰語
+      } else if (this.culture === 5) {
+        style.fontSize = '18px';
+        style.position = 'absolute';
+        style.right = '65px';
+        style.top = '20px';
+        // 阿拉伯語
+      } else if (this.culture === 6) {
+        style.fontSize = '18px';
+        style.position = 'absolute';
+        style.right = '30px';
         style.top = '20px';
       }
 

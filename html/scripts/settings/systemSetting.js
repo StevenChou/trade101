@@ -495,8 +495,8 @@
                 detailTitle4: '品名/型號：',
                 detailTitle5: '單價/數量：',
                 detailTitle6: '税込み金額：',
-                btDetail1: '確認完了、前の画面に戻る',
-                btDetail2: 'チェックを入れたレシートを削除する',
+                btDetail1: '確認完了、前の画面に<br/>戻る',
+                btDetail2: 'チェックを入れたレシー<br/>トを削除する',
                 toScanQR: 'scanQRcode',
             },
             sign: {
@@ -726,8 +726,8 @@
                 detailTitle4: '品名/型號：',
                 detailTitle5: '單價/數量：',
                 detailTitle6: 'ยอดเงินรวมภาษี：',
-                btDetail1: 'ยืนยัน กลับไปยังหน้าก่อนหน้านี้',
-                btDetail2: 'ลบช่องที่เลือกเพื่อลบใบแจ้งหนี้',
+                btDetail1: 'ยืนยัน กลับไปยังหน้าก่<br/>อนหน้านี้',
+                btDetail2: 'ลบช่องที่เลือกเพื่อลบใ<br/>บแจ้งหนี้',
                 toScanQR: 'scanQRcode',
             },
             sign: {
@@ -955,8 +955,8 @@
                 detailTitle4: '品名/型號：',
                 detailTitle5: '單價/數量：',
                 detailTitle6: 'Cantidad con impuestos：',
-                btDetail1: 'Confirmar y regresar a la página anterior',
-                btDetail2: 'Borrar factura seleccionada',
+                btDetail1: 'Confirmar y regresar a <br/>la página anterior',
+                btDetail2: 'Borrar factura <br/>seleccionada',
                 toScanQR: 'scanQRcode',
             },
             sign: {

@@ -1,17 +1,29 @@
 Vue.component('component-remind-main', {
   template: '#template-remind-main',
   props: ['model', 'culture'],
-
   methods: {
     // Btn Click
     handleMouseDown: function(nextId) {
       kiosk.API.goToNext(nextId);
     }
   },
-
   computed: {
     wording: function() {
       return kiosk.wording[this.culture].remind;
+    },
+    btnSize: function() {
+      let fontSize = null;
+      switch (this.culture) {
+        case 3:
+        case 7:
+          fontSize = 18;
+          break;
+        default:
+          fontSize = 24;
+      }
+      return {
+        fontSize: fontSize + 'px'
+      };
     }
   }
 });

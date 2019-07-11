@@ -118,6 +118,25 @@ Vue.component('component-scanPermit-main', {
       return this.megCode !== ''
         ? kiosk.wording[this.culture].scanPermit[this.megCode]
         : '';
+    },
+    btnSize: function() {
+      let fontSize = null;
+      switch (this.culture) {
+        case 3:
+          fontSize = 40;
+          break;
+        case 6:
+          fontSize = 40;
+          break;
+        case 7:
+          fontSize = 36;
+          break;
+        default:
+          fontSize = 48;
+      }
+      return {
+        fontSize: fontSize + 'px'
+      };
     }
   },
   mounted: function() {

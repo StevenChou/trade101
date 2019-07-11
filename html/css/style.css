@@ -157,7 +157,7 @@
 
 .textHome__jp {
   display: inline;
-  font: bold 1.5em Microsoft JhengHei;
+  font: bold 1.2em Microsoft JhengHei;
   margin-left: 7px;
   /* color: blue; */
 }
@@ -171,21 +171,21 @@
 
 .textHome__es {
   display: inline;
-  font: bold 1.5em Microsoft JhengHei;
+  font: bold 1.2em Microsoft JhengHei;
   margin-left: 7px;
   /* color: blue; */
 }
 
 .textHome__th {
   display: inline;
-  font: bold 1.5em Microsoft JhengHei;
+  font: bold 1.2em Microsoft JhengHei;
   margin-left: 7px;
   /* color: blue; */
 }
 
 .textHome__ae {
   display: inline;
-  font: bold 1.5em Microsoft JhengHei;
+  font: bold 1.2em Microsoft JhengHei;
   margin-left: 7px;
   /* color: blue; */
 }
@@ -380,7 +380,7 @@ h3 {
   border-radius: 35px;
   padding: 17px 17px;
   margin: 24px 0 0 15px;
-  width: 180px;
+  width: 250px;
 }
 
 .nav__bar__ko {
@@ -396,7 +396,7 @@ h3 {
   border-radius: 35px;
   padding: 17px 17px;
   margin: 24px 0 0 15px;
-  width: 180px;
+  width: 280px;
 }
 
 .nav__bar__th {
@@ -404,7 +404,7 @@ h3 {
   border-radius: 35px;
   padding: 17px 17px;
   margin: 24px 0 0 15px;
-  width: 180px;
+  width: 200px;
 }
 
 .nav__bar__ae {
@@ -412,7 +412,7 @@ h3 {
   border-radius: 35px;
   padding: 17px 17px;
   margin: 24px 0 0 15px;
-  width: 180px;
+  width: 230px;
 }
 
 .nav-bar-lang > li > a {
