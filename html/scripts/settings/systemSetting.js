@@ -971,7 +971,7 @@
                 successTitle2: 'Acuda al mostrador Nº _____ para comprobar los documentos',
                 successTitle3: 'No completar el procedimiento de devolución de impuestos podría impedirle recoger la cantidad a devolver',
                 successTitle4: '',
-                toHomeText: 'Regresar a la página principal<br/> del servicio',
+                toHomeText: 'Regresar a la página <br/>principal del servicio',
             },
         },
 
