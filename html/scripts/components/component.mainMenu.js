@@ -3,17 +3,49 @@ Vue.component('component-mainMenu-main', {
   props: ['model', 'culture'],
   template: '#template-mainMenu-main',
   data: function() {
-    // Status �M��
-    kiosk.API.initStatus();
-    console.log('>>> culture:', this.culture);
+    // 放這裡，有點怪吧!!
+    // kiosk.API.initStatus();
     return {
-      activeLang: this.culture
+      activeLang: this.culture,
+      keyboardLock: {
+        bottomLeftCount: 0,
+        topRightCount: 0,
+        keyboardLockOne: true,
+        keyboardLockTwo: true
+      }
     };
+  },
+  methods: {
+    openKeyboardOne: function() {
+      if (++this.keyboardLock.bottomLeftCount === 5) {
+        alert('第一階段解鎖!!');
+        this.keyboardLock.bottomLeftCount = 0;
+        this.keyboardLock.keyboardLockOne = false;
+      }
+    },
+    openKeyboardTwo: function() {
+      if (++this.keyboardLock.topRightCount === 7) {
+        alert('第二階段解鎖!!');
+        this.keyboardLock.topRightCount = 0;
+        this.keyboardLock.keyboardLockTwo = false;
+      }
+
+      if (
+        !this.keyboardLock.keyboardLockOne &&
+        !this.keyboardLock.keyboardLockTwo
+      ) {
+        kiosk.API.goToNext('keyboard');
+      }
+    }
   },
   computed: {
     wording: function() {
       return kiosk.wording[this.culture].mainMenu;
     }
+  },
+  created: function() {
+    // 改放這裡了!!
+    kiosk.API.initStatus();
   }
 });
 
@@ -87,7 +119,6 @@ Vue.component('component-common-langmenu', {
       ]
     };
   },
-
   methods: {
     wording: function() {
       return kiosk.wording[this.culture].mainMenu;
@@ -104,7 +135,6 @@ Vue.component('component-common-langmenu', {
       kiosk.API.goToNext(nextId);
     }
   },
-
   computed: {
     // wording: function() {
     //   return kiosk.wording[this.culture].mainMenu;
