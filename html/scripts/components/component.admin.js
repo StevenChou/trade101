@@ -1,6 +1,6 @@
-Vue.component('component-keyboard-main', {
+Vue.component('component-admin-main', {
   props: ['model', 'culture'],
-  template: '#template-keyboard-main',
+  template: '#template-admin-main',
   data: function() {
     var _data = {
       keyinValue: '',
@@ -54,6 +54,9 @@ Vue.component('component-keyboard-main', {
           allowOutsideClick: false
         });
       }
+    },
+    goHome: function() {
+      kiosk.API.goToNext('mainMenu');
     }
   },
   mounted: function() {

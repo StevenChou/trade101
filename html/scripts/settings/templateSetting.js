@@ -17,5 +17,6 @@ var kioskTemplates = [
   'component.detail',
   'component.sign',
   'component.success',
-  'component.keyboard'
+  'component.keyboard',
+  'component.admin'
 ];
