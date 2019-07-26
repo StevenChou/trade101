@@ -2,29 +2,37 @@ Vue.component('component-admin-main', {
   props: ['model', 'culture'],
   template: '#template-admin-main',
   data: function() {
-    var _data = {
-      keyinValue: '',
-      btnRows: [
-        ['$', '%', '?', ':', ';', '/', '*', '-', '+', '@'],
-        ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
-        ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', '.'],
-        ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '(', ')', '_'],
-        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-      ]
-    };
-    return _data;
+    return {};
   },
   methods: {
-    keyin: function(e) {
-      // switch (e.target.innerHTML) {
-      switch (e) {
-        //case 'SHIFT':
-        //    this.toUpperCase = true;
-        //    break;
-        case '←':
-          if (this.keyinValue) {
-            this.keyinValue = this.keyinValue.slice(0, -1);
-          }
+    scanStart: function() {},
+    btnAct: function(actType) {
+      switch (actType) {
+        case 'SCAN_START':
+          kiosk.API.Device.Scanner.startScanner('', function(invData) {
+            if (invData) {
+              swal({
+                title: '<h3>掃描器測試，成功!</h3>',
+                text: '',
+                type: 'success',
+                customClass: 'swal-wide',
+                confirmButtonText: '確定'
+              });
+            }
+          });
+
+          break;
+        case 'SCAN_STOP':
+          kiosk.API.Device.Scanner.stopScanner('', function() {
+            swal({
+              title: '<h3>掃描器關閉測試，成功!</h3>',
+              text: '',
+              type: 'success',
+              customClass: 'swal-wide',
+              confirmButtonText: '確定'
+            });
+          });
+
           break;
         case 'Clear':
           this.keyinValue = '';

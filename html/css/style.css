@@ -1370,3 +1370,7 @@ footer p {
 .direct-pin-mg {
   margin-top: 40px;
 }
+
+.swal-wide {
+  width: 450px !important;
+}
