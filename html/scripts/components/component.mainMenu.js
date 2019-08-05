@@ -95,8 +95,8 @@ Vue.component('component-common-langmenu', {
           },
           {
             next: 'remind',
-            culture: 'ARAE',
-            name: kiosk.wording[this.culture].mainMenu.lang06
+            culture: 'VIVN',
+            name: kiosk.wording[this.culture].mainMenu.lang10
           }
         ]
         // [

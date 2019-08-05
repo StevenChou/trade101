@@ -9,10 +9,48 @@ Vue.component('component-selectDoc-main', {
       kiosk.API.goToNext(nextId);
     }
   },
-
   computed: {
     wording: function() {
       return kiosk.wording[this.culture].selectDoc;
+    },
+    titleFontSize: function() {
+      let fontSize = null;
+      switch (this.culture) {
+        case 10:
+          fontSize = 30;
+          break;
+        default:
+          fontSize = 48;
+      }
+      return {
+        fontSize: fontSize + 'px'
+      };
+    },
+    passportFontSize: function() {
+      let fontSize = null;
+      switch (this.culture) {
+        case 10:
+          fontSize = 27;
+          break;
+        default:
+          fontSize = 32;
+      }
+      return {
+        fontSize: fontSize + 'px'
+      };
+    },
+    entryPermitFontSize: function() {
+      let fontSize = null;
+      switch (this.culture) {
+        case 10:
+          fontSize = 27;
+          break;
+        default:
+          fontSize = 32;
+      }
+      return {
+        fontSize: fontSize + 'px'
+      };
     }
   }
 });
@@ -56,7 +94,7 @@ Vue.component('component-selectDoc-navBar', {
         textHome__ko: this.culture === 4 ? true : false,
         textHome__es: this.culture === 7 ? true : false,
         textHome__th: this.culture === 5 ? true : false,
-        textHome__ae: this.culture === 6 ? true : false
+        textHome__vi: this.culture === 10 ? true : false
       };
     },
     navBtnSize: function() {
@@ -68,7 +106,8 @@ Vue.component('component-selectDoc-navBar', {
         nav__bar__ko: this.culture === 4 ? true : false,
         nav__bar__es: this.culture === 7 ? true : false,
         nav__bar__th: this.culture === 5 ? true : false,
-        nav__bar__ae: this.culture === 6 ? true : false
+        nav__bar__ae: this.culture === 6 ? true : false,
+        nav__bar__vi: this.culture === 10 ? true : false
       };
     }
   }

@@ -99,12 +99,12 @@ Vue.component('component-detail-main', {
         style.position = 'absolute';
         style.right = '65px';
         style.top = '20px';
-        // 阿拉伯語
-      } else if (this.culture === 6) {
+        // 越南語
+      } else if (this.culture === 10) {
         style.fontSize = '18px';
         style.position = 'absolute';
-        style.right = '15px';
-        style.top = '20px';
+        style.right = '35px';
+        style.top = '17px';
       }
 
       return style;
@@ -154,12 +154,12 @@ Vue.component('component-detail-main', {
         style.position = 'absolute';
         style.right = '65px';
         style.top = '20px';
-        // 阿拉伯語
-      } else if (this.culture === 6) {
+        // 越南語
+      } else if (this.culture === 10) {
         style.fontSize = '18px';
         style.position = 'absolute';
-        style.right = '30px';
-        style.top = '20px';
+        style.right = '35px';
+        style.top = '15px';
       }
 
       return style;

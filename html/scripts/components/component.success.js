@@ -40,7 +40,7 @@ Vue.component('component-success-main', {
           left = 80;
           top = 30;
           break;
-        case 6:
+        case 10:
           fontSize = 24;
           left = 65;
           break;
