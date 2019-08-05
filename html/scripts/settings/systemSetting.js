@@ -196,7 +196,7 @@
             remind: {
                 remindTitle1: '提醒您',
                 remindTitle2: '離開退稅機前請務必取得退稅表單',
-                remindTitle3: '請準備好您的正本入境文件(護照/入臺證)及購物發票開始辦理退稅',
+                remindTitle3: '請準備好您的正本入境文件(護照/入境證)及購物發票開始辦理退稅',
                 btTitle: '確認，開始退稅',
                 toSelectDoc: 'selectDoc'
             },
@@ -217,11 +217,11 @@
                 passportCerted:'<div style="margin-top: 10px;">驗證成功</div>'
             },
             scanPermit: {
-                scanPermitTitle: '請掃描您的入臺證條碼',
-                scanError: '無法辨識，請重新掃描入臺證',
+                scanPermitTitle: '請掃描您的入境證條碼',
+                scanError: '無法辨識，請重新掃描入境證',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit:'請放置入臺證',
+                putPermit:'請放置入境證',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
@@ -310,14 +310,14 @@
             remind: {
                 remindTitle1: '提醒您',
                 remindTitle2: '离开退税机前请务必取得退税表单',
-                remindTitle3: '请准备好您的正本入境文件(护照/入台证)及购物发票开始办理退税',
+                remindTitle3: '请准备好您的正本入境文件(护照/入境证)及购物发票开始办理退税',
                 btTitle: '确认，开始退税',
                 toSelectDoc: 'selectDoc'
             },
             selectDoc: {
                 selectTitle: '请选择本次入境台湾所使用证件',
                 passport: '护照',
-                permit: '入出境许可证 (入台证)',
+                permit: '入出境许可证 (入境证)',
                 toScanPassport: 'scanPassport',
                 toScanPermit: 'scanPermit'
             },
@@ -331,11 +331,11 @@
                 passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             scanPermit: {
-                scanPermitTitle: '请扫描您的入台证条码',
-                scanError: '无法辨识，请重新扫描入台证',
+                scanPermitTitle: '请扫描您的入境证条码',
+                scanError: '无法辨识，请重新扫描入境证',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit: '請放置入臺證',
+                putPermit: '請放置入境证',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
