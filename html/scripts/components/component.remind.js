@@ -13,10 +13,12 @@ Vue.component('component-remind-main', {
     },
     btnSize: function() {
       let fontSize = null;
+      let top = 0;
       switch (this.culture) {
         case 3:
         case 7:
           fontSize = 18;
+          top = 17;
           break;
         case 10:
           fontSize = 20;
@@ -24,9 +26,16 @@ Vue.component('component-remind-main', {
         default:
           fontSize = 24;
       }
-      return {
-        fontSize: fontSize + 'px'
-      };
+
+      return this.culture === 7
+        ? {
+            fontSize: fontSize + 'px',
+            position: 'absolute',
+            top: top + 'px'
+          }
+        : {
+            fontSize: fontSize + 'px'
+          };
     }
   }
 });
