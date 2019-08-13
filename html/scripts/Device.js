@@ -1987,4 +1987,103 @@ kiosk.API.Device = kiosk.API.Device || {};
         }
     };
 
+    // === WEBCAM ===
+    kiosk.API.Device.WEBCAM = {
+        DeviceAction: {
+            Capture: 0,
+            Setting: 1,
+            StartRecord: 2,
+            StopRecord: 3,
+            Close: 4
+        },
+        generuteParemater: function (action, param1, param2, param3) {
+            var DeviceCmd = {
+                pixel: param1,
+                picturePath: param2,
+                deviceName: param3
+            },
+                actionCmd = {
+                    Action: action,
+                    Parameter: JSON.stringify(DeviceCmd)
+                },
+                cmd = {
+                    "DeviceName": "WEBCAM",
+                    "Worktype": "PostRequest",
+                    "Paremater": JSON.stringify(actionCmd),
+                    "ReponseModule": "UI",
+                };
+            return cmd;
+        },
+        Capture: function (success, fail, arg, arg1) {
+            kiosk.API.Device.postToDeviceWithCallback(
+                JSON.stringify(this.generuteParemater(this.DeviceAction.Capture, undefined, arg, arg1)),
+                function (res) {
+                    var result = JSON.parse(res);
+                    if (result.IsSuccess) {
+                        success(result);
+                    }
+                    else {
+                        success(result);
+                        kiosk.API.log.logError(res, 'WEBCAN_Capture', 'WEBCAM');
+                    }
+                });
+        },
+        Setting: function (success, fail, arg, arg1) {
+            kiosk.API.Device.postToDeviceWithCallback(
+                JSON.stringify(this.generuteParemater(this.DeviceAction.Setting, arg, undefined, arg1)),
+                function (res) {
+                    var result = JSON.parse(res);
+                    if (result.IsSuccess) {
+                        success(result);
+                    }
+                    else {
+                        success(result);
+                        kiosk.API.log.logError(res, 'WEBCAN_Setting', 'WEBCAM');
+                    }
+                });
+        },
+        StartRecord: function (success, fail, arg, arg1) {
+            kiosk.API.Device.postToDeviceWithCallback(
+                JSON.stringify(this.generuteParemater(this.DeviceAction.StartRecord, undefined, arg, arg1)),
+                function (res) {
+                    var result = JSON.parse(res);
+                    if (result.IsSuccess) {
+                        success(result);
+                    }
+                    else {
+                        success(result);
+                        kiosk.API.log.logError(res, 'WEBCAN_Setting', 'WEBCAM');
+                    }
+                });
+        },
+        StopRecord: function (success, fail, arg, arg1) {
+            kiosk.API.Device.postToDeviceWithCallback(
+                JSON.stringify(this.generuteParemater(this.DeviceAction.StopRecord, undefined, undefined, arg1)),
+                function (res) {
+                    var result = JSON.parse(res);
+                    if (result.IsSuccess) {
+                        success(result);
+                    }
+                    else {
+                        success(result);
+                        kiosk.API.log.logError(res, 'WEBCAN_Setting', 'WEBCAM');
+                    }
+                });
+        },
+        Close: function (success, fail, arg, arg1) {
+            kiosk.API.Device.postToDeviceWithCallback(
+                JSON.stringify(this.generuteParemater(this.DeviceAction.Close, undefined, undefined, arg1)),
+                function (res) {
+                    var result = JSON.parse(res);
+                    if (result.IsSuccess) {
+                        success(result);
+                    }
+                    else {
+                        success(result);
+                        kiosk.API.log.logError(res, 'WEBCAN_Setting', 'WEBCAM');
+                    }
+                });
+        }
+    };
+    // =======================
 })();
