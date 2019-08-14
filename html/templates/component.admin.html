@@ -24,8 +24,7 @@
          <h3 class="panel-heading">Printer</h3>
          <div class="panel-body">
             <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('PRINT_START')">列印測試</button>
-  	 <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('PRINT_STOP')">列印停止</button>
-  	 <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('PRINT_PAPER')">數量檢測</button>
+  	        <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('PRINT_STATUS')">狀態檢測</button>
          </div>
       </div>
 
@@ -33,16 +32,17 @@
          <h3 class="panel-heading">Passport Scanner</h3>
          <div class="panel-body">
             <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('PASSPORT_START')">掃描開始</button>
-             <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('PASSPORT_END')">掃描停止</button>
+            <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('PASSPORT_END')">掃描停止</button>
          </div>
       </div>
 
       <div class="panel panel-info" style="margin-top: 10px;">
          <h3 class="panel-heading">API Testing</h3>
          <div class="panel-body">
-            <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="handleMouseDown('ScannerStar')">101 API</button>
-             <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="handleMouseDown('ScannerStop')">大平台-移民署</button>
-         </div>
+             <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('101_API')">101 API</button>
+             <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('AUTH_API')">大平台-移民署(驗證)</button>
+        <button class="btn btn-md btn-default" style="margin-right: 30px; font-weight:bold; border:3px #808080 solid;" @mousedown="btnAct('APPLY_API')">大平台-開立</button>
+  </div>
       </div>
 
     <!-- <div class="panel panel-danger" style="margin-top: 30px;">

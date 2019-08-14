@@ -164,15 +164,15 @@ Vue.component('component-admin-main', {
             JSON.stringify(data),
             function(res) {
               swal({
-                title: '<h3>關閉護照掃描，成功!</h3>',
+                title: '<h3>印表機測試，成功!</h3>',
                 text: '',
                 type: 'success',
                 customClass: 'swal-wide',
                 confirmButtonText: '確定'
               });
               // TODO 狀態判斷
-              alert('>>> 成功開立:' + JSON.stringify(res));
-              //this.handleMouseDown(this.wording.toSuccess);
+              // alert('>>> 成功開立:' + JSON.stringify(res));
+              // this.handleMouseDown(this.wording.toSuccess);
 
               // TODO 何時導到錯誤頁面
             }.bind(this),
@@ -180,7 +180,115 @@ Vue.component('component-admin-main', {
           );
 
           break;
-        case 'PRINT_STOP':
+        case 'PRINT_STATUS':
+          const sendData = {};
+          External.TradevanKioskCommon.CommonService.PrinterPaperStatus(
+            JSON.stringify(sendData),
+            function(res) {
+              // alert(JSON.stringify(res) + '---' + JSON.parse(res).result.code);
+              const resCode = JSON.parse(res).result.code;
+              if (parseInt(resCode) < 0) {
+                swal({
+                  title: '<h3>>印表機狀態，錯誤!</h3>',
+                  text: JSON.stringify(res),
+                  type: 'error',
+                  confirmButtonText: '確定',
+                  allowOutsideClick: false
+                });
+              } else {
+                swal({
+                  title: '<h3>印表機狀態，成功!</h3>',
+                  text:
+                    parseInt(resCode) === 150
+                      ? '印表機紙張數量過少'
+                      : JSON.stringify(res),
+                  type: 'success',
+                  customClass: 'swal-wide',
+                  confirmButtonText: '確定'
+                });
+              }
+            },
+            function() {}
+          );
+
+          break;
+        case '101_API':
+          break;
+        case 'AUTH_API':
+          //查詢移民署
+          const postData = {
+            passportNo: '012345678',
+            country: 'UTO'
+          };
+          External.TradevanKioskCommon.CommonService.CallImm(
+            JSON.stringify(postData),
+            function(res) {
+              const resObj = JSON.parse(res);
+              // succ
+              if (resObj && resObj.result['status'] === '000') {
+                swal({
+                  title: '<h3>移民署 API，連線成功!</h3>',
+                  text: JSON.stringify(resObj),
+                  type: 'success',
+                  customClass: 'swal-wide',
+                  confirmButtonText: '確定'
+                });
+              } else {
+                swal({
+                  title: '<h3>移民署 API，連線失敗!</h3>',
+                  text: JSON.stringify(resObj),
+                  type: 'error',
+                  confirmButtonText: '確定',
+                  allowOutsideClick: false
+                });
+              }
+            },
+            function() {}
+          );
+
+          break;
+        case 'APPLY_API':
+          const postData00 = {
+            passportNo: '108670735170',
+            country: 'CN',
+            inDate: '20190617',
+            idn: '321102199612261047',
+            ename: 'WHALEBRO',
+            applyMainList: []
+          };
+
+          External.TradevanKioskCommon.CommonService.Apply(
+            JSON.stringify(postData00),
+            function(res) {
+              const resObj = JSON.parse(res);
+              // alert(
+              //   '>>> 回傳資訊:' +
+              //     resObj.result['message'] +
+              //     '---' +
+              //     resObj.result['status']
+              // );
+
+              if (resObj && resObj.result['status'] === '000') {
+                swal({
+                  title: '<h3>開立 API，連線成功!</h3>',
+                  text: JSON.stringify(resObj),
+                  type: 'success',
+                  customClass: 'swal-wide',
+                  confirmButtonText: '確定'
+                });
+              } else {
+                swal({
+                  title: '<h3>開立 API，連線失敗!</h3>',
+                  text: JSON.stringify(resObj),
+                  type: 'error',
+                  confirmButtonText: '確定',
+                  allowOutsideClick: false
+                });
+              }
+            },
+            function() {}
+          );
+
           break;
         case 'Clear':
           this.keyinValue = '';
