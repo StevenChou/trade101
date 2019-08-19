@@ -11,6 +11,7 @@ Vue.component('component-sign-main', {
       context: null,
       point: {},
       timer: 59,
+      timeoutCount: 0,
       myInterval: null,
       myCanvas: null
     };
@@ -91,6 +92,10 @@ Vue.component('component-sign-main', {
         function() {
           if (this.timer === 0) {
             this.timer = 59;
+            this.timeoutCount++;
+            if (this.timeoutCount >= 2) {
+              kiosk.API.goToNext('error');
+            }
           } else {
             this.timer--;
           }
