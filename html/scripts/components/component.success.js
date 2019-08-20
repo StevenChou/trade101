@@ -42,7 +42,7 @@ Vue.component('component-success-main', {
           break;
         case 10:
           fontSize = 24;
-          left = 65;
+          left = 75;
           break;
         case 7:
           fontSize = 20;
@@ -66,6 +66,9 @@ Vue.component('component-success-main', {
         left: left + 'px',
         top: top + 'px'
       };
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   }
 });

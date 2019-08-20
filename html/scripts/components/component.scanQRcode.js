@@ -24,7 +24,6 @@ Vue.component('component-scanQRcode-main', {
       return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     },
     handleMouseDown: function(nextId) {
-      kiosk.API.goToNext(nextId);
       // alert('>>> btn name:' + this.wording.toDetail);
       // alert('>>> nextId:' + nextId + '---' + kiosk.app.$data.lockBtn);
       if (!kiosk.app.$data.lockBtn) {

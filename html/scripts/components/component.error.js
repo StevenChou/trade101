@@ -45,7 +45,7 @@ Vue.component('component-error-main', {
           break;
         case 10:
           fontSize = 24;
-          left = 65;
+          left = 75;
           break;
         case 7:
           fontSize = 20;
