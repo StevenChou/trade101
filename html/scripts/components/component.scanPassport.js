@@ -145,6 +145,9 @@ Vue.component('component-scanPassport-main', {
       return this.megCode !== ''
         ? kiosk.wording[this.culture].scanPassport[this.megCode]
         : '';
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   },
   mounted: function() {
@@ -210,6 +213,9 @@ Vue.component('component-scanPassport-navBar', {
         nav__bar__th: this.culture === 5 ? true : false,
         nav__bar__vi: this.culture === 10 ? true : false
       };
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   }
 });

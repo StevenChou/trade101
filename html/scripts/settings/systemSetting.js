@@ -66,9 +66,9 @@
                 mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to Tax Refund Application Kiosk",
                 mainMenuTitle3: "Please select language to start",
-                lang01: '繁體中文',
+                lang02: '繁體中文',
                 lang13: '简体中文',
-                lang02: 'English',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -111,8 +111,8 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: 'Please proceed to Customer Service Center with your travel document and invoices issued by Taipei 101 for application, thank you!',
-                errorTitle2: '',
+                errorTitle: '',
+                errorTitle2: 'Please proceed to Customer Service Center with your travel document and invoices issued by Taipei 101 for application, thank you!',
                 toHomeText: 'Back to Homepage',
             },
             preScanQRcode: {
@@ -181,9 +181,9 @@
                 mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
-                lang01: '繁體中文',
+                lang02: '繁體中文',
                 lang13: '简体中文',
-                lang02: 'English',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -226,8 +226,8 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '請攜帶您的入境文件及發票至退稅櫃檯，',
-                errorTitle2: '將有專人為您服務，謝謝!',
+                errorTitle: '',
+                errorTitle2: '請攜帶您的入境文件及發票至退稅櫃檯，將有專人為您服務，謝謝!',
                 toHomeText: '回服務首頁',
             },
             preScanQRcode: {
@@ -295,9 +295,9 @@
                 mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
-                lang01: '繁體中文',
+                lang02: '繁體中文',
                 lang13: '简体中文',
-                lang02: 'English',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -340,8 +340,8 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '请携带您的入境文件及发票至退税柜台，',
-                errorTitle2: '将有专人为您服务，谢谢!',
+                errorTitle: '',
+                errorTitle2: '请携带您的入境文件及发票至退税柜台，将有专人为您服务，谢谢!',
                 toHomeText: '回服务首页',
             },
             preScanQRcode: {
@@ -410,9 +410,9 @@
                 mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
-                lang01: '繁體中文',
+                lang02: '繁體中文',
                 lang13: '简体中文',
-                lang02: 'English',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -455,8 +455,8 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: 'ご自身の入国証明書類と商品購入レシートをもって税金還付受付カウンターへお越しください。専門スタッフが対応いたします。',
-                errorTitle2: '',
+                errorTitle: '',
+                errorTitle2: 'ご自身の入国証明書類と商品購入レシートをもって税金還付受付カウンターへお越しください。専門スタッフが対応いたします。',
                 toHomeText: 'サービスのホーム画面に戻る',
             },
             preScanQRcode: {
@@ -525,9 +525,9 @@
                 mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
-                lang01: '繁體中文',
+                lang02: '繁體中文',
                 lang13: '简体中文',
-                lang02: 'English',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -570,8 +570,8 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '입국 서류 및 영수증을 가지고 세금환급 카운터로 가시면 담당자가 서비스를 제공할 것입니다. 감사합니다!',
-                errorTitle2: '',
+                errorTitle: '',
+                errorTitle2: '입국 서류 및 영수증을 가지고 세금환급 카운터로 가시면 담당자가 서비스를 제공할 것입니다. 감사합니다!',
                 toHomeText: '홈으로 돌아가기',
             },
             preScanQRcode: {
@@ -641,9 +641,9 @@
                 mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
-                lang01: '繁體中文',
+                lang02: '繁體中文',
                 lang13: '简体中文',
-                lang02: 'English',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -686,8 +686,8 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: 'โปรดนำเอกสารที่คุณสำแดงตอนเข้ามาในไต้หวันและใบแจ้งหนี้ของคุณไปที่เคาน์เตอร์ขอคืนภาษี จะมีคนคอยให้บริการท่าน ขอบคุณครับ!',
-                errorTitle2: '',
+                errorTitle: '',
+                errorTitle2: 'โปรดนำเอกสารที่คุณสำแดงตอนเข้ามาในไต้หวันและใบแจ้งหนี้ของคุณไปที่เคาน์เตอร์ขอคืนภาษี จะมีคนคอยให้บริการท่าน ขอบคุณครับ!',
                 toHomeText: 'กลับไปที่บริการหน้าแรก',
             },
             preScanQRcode: {
@@ -756,9 +756,9 @@
                 mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
-                lang01: '繁體中文',
+                lang02: '繁體中文',
                 lang13: '简体中文',
-                lang02: 'English',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -870,9 +870,9 @@
                 mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
-                lang01: '繁體中文',
+                lang02: '繁體中文',
                 lang13: '简体中文',
-                lang02: 'English',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -915,9 +915,9 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: 'Lleve consigo el documento de entrada y la factura al mostrador de devolución de impuestos, y una persona especializada le atenderá. ¡Muchas gracias!',
-                errorTitle2: '',
-                toHomeText: 'Regresar a la página principal del servicio',
+                errorTitle: '',
+                errorTitle2: 'Lleve consigo el documento de entrada y la factura al mostrador de devolución de impuestos, y una persona especializada le atenderá. ¡Muchas gracias!',
+                toHomeText: 'Regresar a la página<br> principal del servicio',
             },
             preScanQRcode: {
                 preScanQRcodeTitle: 'Prepare escaneado de código de barras de la factura de compra',
@@ -981,8 +981,8 @@
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk.",
                 mainMenuTitle3: "Please select language",
 
-                lang01: '中文',
-                lang02: 'English',
+                lang02: '中文',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -1186,19 +1186,19 @@
                 toHomeText: '한국어服務首頁',
             },
         },
-
+        // 越南文
         10: {
             common: {
                 indexPage: 'Trang chủ',
                 prePage: 'Trang trước'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
+                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk.",
                 mainMenuTitle3: "Please select language",
-                lang01: '繁體中文',
+                lang02: '繁體中文',
                 lang13: '简体中文',
-                lang02: 'English',
+                lang01: 'English',
                 lang03: '日本語',
                 lang04: '한국어',
                 lang05: 'ไทย',
@@ -1241,9 +1241,9 @@
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             error: {
-                errorTitle: '請攜帶您的入境文件及發票至退稅櫃檯，',
-                errorTitle2: '將有專人為您服務，謝謝!',
-                toHomeText: '回服務首頁',
+                errorTitle: '',
+                errorTitle2: 'Vui lòng mang theo giấy tờ nhập cảnh và hóa đơn của bạn đến quầy hoàn thuế, sẽ có người phục vụ bạn , cảm ơn!',
+                toHomeText: 'Trở về trang chủ chính',
             },
             preScanQRcode: {
                 preScanQRcodeTitle: 'Chuẩn bị quét mã vạch hóa đơn mua sắm',

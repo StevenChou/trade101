@@ -355,6 +355,7 @@ var kiosk = kiosk || {};
         isLoading: false,
         showImg: false,
         isScrollDisable: true,
+        // add by whalebro
         axiosInstances: { ap101: null, apTrade: null },
         invoiceItems: [],
         invoiceNum: [],
@@ -424,6 +425,41 @@ var kiosk = kiosk || {};
           kiosk.status.processTask = task;
           this.currentFoot = undefined;
           this.currentPage = 'component-common-process';
+        },
+        // add by whalebro
+        changeFontFamily: function(culture) {
+          let fontStyle = null;
+
+          switch (culture) {
+            case 1:
+            case 7:
+              fontStyle = 'Myriad Web Pro';
+              break;
+            case 2:
+              // fontStyle = 'Noto Sans CJK TC Regular';
+              fontStyle = '華康儷中黑';
+              break;
+            case 3:
+              fontStyle = 'Noto Sans CJK JP Regular';
+              break;
+            case 4:
+              fontStyle = 'Noto Sans CJK KR Regular';
+              break;
+            case 5:
+              fontStyle = 'Noto Sans Thai';
+              break;
+            case 10:
+              fontStyle = 'Noto Sans Tai Viet';
+              break;
+            case 13:
+              // fontStyle = 'Noto Sans CJK SC Regular';
+              fontStyle = '華康儷中黑';
+              break;
+            default:
+              fontStyle = 'Microsoft JhengHei';
+          }
+
+          return { fontFamily: fontStyle };
         },
         ErrorPage: function(msg) {}
       },

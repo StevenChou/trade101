@@ -10,7 +10,7 @@ Vue.component('component-sign-main', {
       paint: false,
       context: null,
       point: {},
-      timer: 59,
+      timer: 9,
       timeoutCount: 0,
       myInterval: null,
       myCanvas: null
@@ -91,7 +91,7 @@ Vue.component('component-sign-main', {
       this.myInterval = setInterval(
         function() {
           if (this.timer === 0) {
-            this.timer = 59;
+            this.timer = 9;
             this.timeoutCount++;
             if (this.timeoutCount >= 2) {
               kiosk.API.goToNext('error');
@@ -107,6 +107,9 @@ Vue.component('component-sign-main', {
   computed: {
     wording: function() {
       return kiosk.wording[this.culture].sign;
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   },
   mounted: function() {
@@ -283,6 +286,9 @@ Vue.component('component-sign-navBar', {
         nav__bar__th: this.culture === 5 ? true : false,
         nav__bar__vi: this.culture === 10 ? true : false
       };
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   }
 });

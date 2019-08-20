@@ -163,6 +163,9 @@ Vue.component('component-detail-main', {
       }
 
       return style;
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   },
   mounted: function() {

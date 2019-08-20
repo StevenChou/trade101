@@ -137,6 +137,9 @@ Vue.component('component-scanPermit-main', {
       return {
         fontSize: fontSize + 'px'
       };
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   },
   mounted: function() {
@@ -202,6 +205,9 @@ Vue.component('component-scanPermit-navBar', {
         nav__bar__th: this.culture === 5 ? true : false,
         nav__bar__vi: this.culture === 10 ? true : false
       };
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   }
 });

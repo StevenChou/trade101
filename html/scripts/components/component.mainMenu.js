@@ -59,7 +59,7 @@ Vue.component('component-common-langmenu', {
           {
             next: 'remind',
             culture: 'ZHTW',
-            name: kiosk.wording[this.culture].mainMenu.lang01
+            name: kiosk.wording[this.culture].mainMenu.lang02
           },
           {
             next: 'remind',
@@ -69,7 +69,7 @@ Vue.component('component-common-langmenu', {
           {
             next: 'remind',
             culture: 'ENUS',
-            name: kiosk.wording[this.culture].mainMenu.lang02
+            name: kiosk.wording[this.culture].mainMenu.lang01
           },
           {
             next: 'remind',

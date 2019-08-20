@@ -24,7 +24,8 @@ Vue.component('component-selectDoc-main', {
           fontSize = 36;
       }
       return {
-        fontSize: fontSize + 'px'
+        fontSize: fontSize + 'px',
+        marginTop: '20px'
       };
     },
     passportFontSize: function() {
@@ -52,6 +53,9 @@ Vue.component('component-selectDoc-main', {
       return {
         fontSize: fontSize + 'px'
       };
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   }
 });
@@ -110,6 +114,9 @@ Vue.component('component-selectDoc-navBar', {
         nav__bar__ae: this.culture === 6 ? true : false,
         nav__bar__vi: this.culture === 10 ? true : false
       };
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   }
 });

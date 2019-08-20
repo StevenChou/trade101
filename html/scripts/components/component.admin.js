@@ -78,7 +78,7 @@ Vue.component('component-admin-main', {
             },
             function() {},
             'C:\\WorkPath\\MyPhoto2019_0601_154936.jpg',
-            'deviceName'
+            'USB 2.0M Camera'
           );
 
           break;

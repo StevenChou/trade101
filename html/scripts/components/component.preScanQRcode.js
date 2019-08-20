@@ -13,6 +13,9 @@ Vue.component('component-preScanQRcode-main', {
   computed: {
     wording: function() {
       return kiosk.wording[this.culture].preScanQRcode;
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   }
 });
@@ -70,6 +73,9 @@ Vue.component('component-preScanQRcode-navBar', {
         nav__bar__th: this.culture === 5 ? true : false,
         nav__bar__vi: this.culture === 10 ? true : false
       };
+    },
+    cultureFontStyle: function() {
+      return kiosk.app.changeFontFamily(this.culture);
     }
   }
 });
