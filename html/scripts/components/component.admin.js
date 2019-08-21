@@ -77,8 +77,8 @@ Vue.component('component-admin-main', {
               alert(JSON.stringify(res));
             },
             function() {},
-            'C:\\WorkPath\\MyPhoto2019_0601_154936.jpg',
-            'USB 2.0M Camera'
+            'C:\\WorkPath\\MyPhoto2019_0821_whalebro.jpg',
+            ''
           );
 
           break;

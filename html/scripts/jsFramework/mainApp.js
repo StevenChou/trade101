@@ -449,11 +449,12 @@ var kiosk = kiosk || {};
               fontStyle = 'Noto Sans Thai';
               break;
             case 10:
-              fontStyle = 'Noto Sans Tai Viet';
+              // fontStyle = 'Noto Sans Tai Viet';
+              fontStyle = 'Noto Sans CJK TC Regular';
               break;
             case 13:
-              // fontStyle = 'Noto Sans CJK SC Regular';
-              fontStyle = '華康儷中黑';
+              fontStyle = 'Noto Sans CJK SC Regular';
+              // fontStyle = '華康儷中黑';
               break;
             default:
               fontStyle = 'Microsoft JhengHei';
