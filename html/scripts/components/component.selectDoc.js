@@ -57,6 +57,9 @@ Vue.component('component-selectDoc-main', {
     cultureFontStyle: function() {
       return kiosk.app.changeFontFamily(this.culture);
     }
+  },
+  created: function() {
+    kiosk.app.clearUserData();
   }
 });
 

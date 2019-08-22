@@ -31,6 +31,17 @@ Vue.component('component-scanQRcode-main', {
         if (this.wording.toSign === nextId) {
           kiosk.app.$data.lockBtn = true;
 
+          const testData = [
+            {
+              unvAmt: 20000,
+              qty: 2,
+              itemCname: '筆電',
+              brandCname: '宏碁',
+              unvNo: 'SW08220014',
+              modelCname: 'ACER'
+            }
+          ];
+
           //開立小額單
           const data = {
             passportNo: '108670735170',
@@ -38,7 +49,8 @@ Vue.component('component-scanQRcode-main', {
             inDate: '20190617',
             idn: '321102199612261047',
             ename: 'WHALEBRO',
-            applyMainList: this.transformItems()
+            //applyMainList: this.transformItems()
+            applyMainList: testData
           };
 
           // alert('>>> sendData:' + JSON.stringify(data));
@@ -51,6 +63,7 @@ Vue.component('component-scanQRcode-main', {
           External.TradevanKioskCommon.CommonService.Apply(
             JSON.stringify(data),
             function(res) {
+              // alert('>>> scanQRcode:' + res);
               const resObj = JSON.parse(res);
               alert(
                 '>>> 回傳資訊:' +
@@ -60,11 +73,15 @@ Vue.component('component-scanQRcode-main', {
               );
 
               if (resObj && resObj.result['status'] === '000') {
+                // *** 儲存開立單號(taxAppNo)
+                kiosk.app.$data.userData['taxAppNo'] =
+                  resObj.result['taxAppNo'];
                 kiosk.API.goToNext(nextId);
               } else {
                 kiosk.app.$data.lockBtn = false;
-                // for testing
-                kiosk.API.goToNext(nextId);
+                // 這邊要改阿
+                // for testing  之後要刪掉!!
+                // kiosk.API.goToNext(nextId);
               }
             },
             function() {}

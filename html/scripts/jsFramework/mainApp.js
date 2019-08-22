@@ -462,6 +462,14 @@ var kiosk = kiosk || {};
 
           return { fontFamily: fontStyle };
         },
+        // 清除使用者暫存資料
+        clearUserData: function() {
+          // alert('>>> clear user data ---' + this.lockBtn);
+          this.invoiceItems = [];
+          this.invoiceNum = [];
+          this.lockBtn = false;
+          this.userData = {};
+        },
         ErrorPage: function(msg) {}
       },
       mounted: function() {

@@ -51,14 +51,14 @@ Vue.component('component-scanPassport-main', {
                 External.TradevanKioskCommon.CommonService.CallImm(
                   JSON.stringify(postData),
                   function(res) {
-                    // alert('>>> json string:' + res);
+                    //alert('>>> json string:' + res);
                     const resObj = JSON.parse(res);
-                    // alert(
-                    //   '>>> 回傳資訊:' +
-                    //     resObj.result['message'] +
-                    //     '---' +
-                    //     resObj.result['status']
-                    // );
+                    alert(
+                      '>>> 回傳資訊:' +
+                        resObj.result['message'] +
+                        '---' +
+                        resObj.result['status']
+                    );
 
                     // succ
                     if (resObj && resObj.result['status'] === '000') {
@@ -96,7 +96,9 @@ Vue.component('component-scanPassport-main', {
                       // }, 1000);
                     }
                   },
-                  function() {}
+                  function() {
+                    alert('>>> 移民署連線錯誤!!');
+                  }
                 );
               } else {
                 // 掃描不到 ---> 要重新啟動護照機!!
@@ -157,6 +159,9 @@ Vue.component('component-scanPassport-main', {
     // alert('釋放資源!!');
     this.stopPassportScan();
     clearInterval(this.myInterval);
+  },
+  created: function() {
+    kiosk.app.clearUserData();
   }
 });
 

@@ -149,6 +149,9 @@ Vue.component('component-scanPermit-main', {
   beforeDestroy: function() {
     this.StopScanner();
     // this.ScannerReset();
+  },
+  created: function() {
+    kiosk.app.clearUserData();
   }
 });
 

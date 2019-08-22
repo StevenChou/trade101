@@ -46,6 +46,7 @@ Vue.component('component-mainMenu-main', {
   created: function() {
     // 改放這裡了!!
     kiosk.API.initStatus();
+    kiosk.app.clearUserData();
   }
 });
 

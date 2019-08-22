@@ -40,6 +40,9 @@ Vue.component('component-remind-main', {
     cultureFontStyle: function() {
       return kiosk.app.changeFontFamily(this.culture);
     }
+  },
+  created: function() {
+    kiosk.app.clearUserData();
   }
 });
 
