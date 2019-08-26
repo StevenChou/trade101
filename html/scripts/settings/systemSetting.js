@@ -106,7 +106,7 @@
                 scanError: 'Recognition error, please scan barcode of your exit & entry permit again.',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode', 
-                putPermit: '請放置入臺證',
+                putPermit: 'Please target the barcode to infrared scanner.',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
@@ -221,7 +221,7 @@
                 scanError: '無法辨識，請重新掃描入境證',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit:'請放置入境證',
+                putPermit:'請將入境證左上方條碼對準紅外線掃描器',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
@@ -335,7 +335,7 @@
                 scanError: '无法辨识，请重新扫描入境证',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit: '請放置入境证',
+                putPermit: '请将入境证左上方条码对准红外线扫描器',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
@@ -450,7 +450,7 @@
                 scanError: '認識できませんでした。もう一度、台湾出入国許可証をスキャンしてください',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit: '請放置入臺證',
+                putPermit: '台湾出入国許可証左上のバーコードを赤外線スキャナの位置に合わせてください',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
@@ -565,7 +565,7 @@
                 scanError: '인식할 수 없습니다. 타이완 입국증을 다시 스캔하세요',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit: '請放置入臺證',
+                putPermit: '타이완 입국증 왼쪽 상단의 바코드를 적외선 스캐너에 맞추세요.',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
@@ -681,7 +681,7 @@
                 scanError: 'ไม่สามารถสแกนได้ โปรดสแกนใบอนุญาตขาเข้าของคุณอีกครั้ง',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit: '請放置入臺證',
+                putPermit: 'โปรดวางบาร์โค้ดที่มุมด้านซ้ายบนของใบบันทึกขาเข้าตรงเครื่องสแกนเนอร์อินฟราเรด',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
@@ -910,7 +910,7 @@
                 scanError: 'Fallo de reconocimiento. Vuelva a escanear su certificado de entrada a Taiwán.',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit: '請放置入臺證',
+                putPermit: 'Alinee el código de barras de la parte superior izquierda del certificado de entrada a Taiwán con la línea roja del escáner',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
@@ -1236,7 +1236,7 @@
                 scanError: 'Không thể xác nhận , vui lòng quét lại thẻ nhập cảnh của bạn',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit: '請放置入臺證',
+                putPermit: 'Vui lòng căn chỉnh mã vạch ở phía trên bên trái của thẻ nhập cảnh với máy quét hồng ngoại.',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
