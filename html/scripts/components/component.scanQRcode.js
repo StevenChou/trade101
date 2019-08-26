@@ -37,7 +37,7 @@ Vue.component('component-scanQRcode-main', {
               qty: 2,
               itemCname: '筆電',
               brandCname: '宏碁',
-              unvNo: 'SW08220014',
+              unvNo: 'SW08220018',
               modelCname: 'ACER'
             }
           ];
@@ -96,16 +96,26 @@ Vue.component('component-scanQRcode-main', {
       this.megCode = 'scanQRcodeLoading';
       kiosk.app.$data.lockBtn = true;
 
+      alert(
+        '>>> invNo:' +
+          invNo.substr(0, invNo.length - 4) +
+          ' --- random:' +
+          invNo.substr(invNo.length - 4, 4)
+      );
+
       kiosk.app.axiosInstances.apTrade
         .get('/data.json', {
           params: {
-            invNo: invNo
+            invNo: invNo,
+            randomCode: invNo.substr(invNo.length - 4, 4)
           }
         })
         .then(function(res) {
           if (scanQRcode.isValidInvItem(res.data, invNo)) {
-            scanQRcode.addInvItem(res.data, invNo);
-            scanQRcode.addInvNum(invNo);
+            // scanQRcode.addInvItem(res.data, invNo);
+            // scanQRcode.addInvNum(invNo);
+            scanQRcode.addInvItem(res.data, invNo.substr(0, invNo.length - 4));
+            scanQRcode.addInvNum(invNo.substr(0, invNo.length - 4));
             scanQRcode.number = scanQRcode.invoiceNum.length;
             scanQRcode.amount = scanQRcode.calcuAmt();
           }
@@ -247,8 +257,6 @@ Vue.component('component-scanQRcode-main', {
         invNo = invData.substr(5, 14);
         // alert('>>> barcode:' + invNo);
       }
-
-      // TODO: 隨機碼
 
       this.getInvNoInfo(invNo);
     },
