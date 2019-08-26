@@ -112,7 +112,7 @@
             },
             error: {
                 errorTitle: '',
-                errorTitle2: 'Please proceed to Customer Service Center with your travel document and invoices issued by Taipei 101 for application, thank you!',
+                errorTitle2: 'Please proceed to Tax Refund Center with your travel document and invoices issued by Taipei 101 for application, thank you!',
                 toHomeText: 'Back to Homepage',
             },
             preScanQRcode: {
@@ -164,7 +164,7 @@
             },
             success: {
                 successTitle1: 'Your application form is being printed now, thank you for patience.',
-                successTitle2: 'Please proceed to counter _____ of Customer Service Center for final document verification.',
+                successTitle2: 'Please proceed to counter _____ of Tax Refund Center for final document verification.',
                 successTitle3: "Reminder! You won't be able to claim tax refund if application process is unncompleted.",
                 successTitle4: '',
                 toHomeText: 'Back to Homepage',
