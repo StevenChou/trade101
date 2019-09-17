@@ -97,9 +97,9 @@
                 scanError: 'Recognition error, please scan your passport again.',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                scanPassportLoading: 'Scanning passport<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerting: 'Verifying…<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted: '<div style="margin-top: 10px;">Verification success</div>'
             },
             scanPermit: {
                 scanPermitTitle: 'Please scan barcode of your exit & entry permit.',
@@ -107,8 +107,8 @@
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode', 
                 putPermit: 'Please target the barcode to infrared scanner.',
-                permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                permitCerting: 'Verifying…<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                permitCerted: '<div style="margin-top: 10px;">Verification success</div>'
             },
             error: {
                 errorTitle: '',
@@ -139,8 +139,8 @@
 
                 scanQRError1: 'This invoice is ineligible for tax refund application in Taipei 101 Mall，<br>please scan next invoice.',
                 scanQRError2: 'please scan next invoice.',
-                scanQRErrorDup: '發票重複輸入，<br>please scan next invoice.',
-                scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                scanQRErrorDup: 'Verification success，<br>please scan next invoice.',
+                scanQRcodeLoading: 'Querying…<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -164,7 +164,7 @@
             },
             success: {
                 successTitle1: 'Your application form is being printed now, thank you for patience.',
-                successTitle2: 'Please proceed to counter _____ of Tax Refund Center for final document verification.',
+                successTitle2: 'Please proceed to Tax Refund Center for final document verification.',
                 successTitle3: "Reminder! You won't be able to claim tax refund if application process is unncompleted.",
                 successTitle4: '',
                 toHomeText: 'Back to Homepage',
@@ -279,7 +279,7 @@
             },
             success: {
                 successTitle1: '列印中，請稍後!',
-                successTitle2: '請至_____號櫃台查驗文件',
+                successTitle2: '請至退稅服務櫃檯查驗文件',
                 successTitle3: '未完成所有退稅手續會導致您無法領取稅金',
                 successTitle4: '',
                 toHomeText: '回服務首頁',
@@ -368,7 +368,7 @@
 
                 scanQRError1: '此发票明细无法退税，<br>请扫描下一张',
                 scanQRError2: '请扫描下一张',
-                scanQRErrorDup: '發票重複輸入，<br>请扫描下一张',
+                scanQRErrorDup: '发票资料重复输入，<br>请扫描下一张',
                 scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 toDetail: 'detail',
                 toSign: 'sign',
@@ -393,7 +393,7 @@
             },
             success: {
                 successTitle1: '列印中，请稍後!',
-                successTitle2: '请至_____号柜台查验文件',
+                successTitle2: '请至退税服务柜台查验文件',
                 successTitle3: '未完成所有退税手续会导致您无法领取税金',
                 successTitle4: '',
                 toHomeText: '回服务首页',
@@ -441,9 +441,9 @@
                 scanError: '認識できませんでしたもう一度パスポートをスキャンしてください',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                scanPassportLoading: 'パスポートをスキャン中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerting: 'データを検証中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted: '<div style="margin-top: 10px;">検証成功</div>'
             },
             scanPermit: {
                 scanPermitTitle: '台湾出入国許可証のバーコードをスキャンしてください',
@@ -451,8 +451,8 @@
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
                 putPermit: '台湾出入国許可証左上のバーコードを赤外線スキャナの位置に合わせてください',
-                permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                permitCerting: 'データを検証中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                permitCerted: '<div style="margin-top: 10px;">検証成功</div>'
             },
             error: {
                 errorTitle: '',
@@ -482,9 +482,9 @@
                 scanQRcodeTitle15: '確認完了',
 
                 scanQRError1: 'このレシートの内容は税金還付手続きができません<br>次のレシートをスキャンしてください',
-                scanQRError2: '請掃描下一張',
-                scanQRErrorDup: '發票重複輸入，<br>請掃描下一張',
-                scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                scanQRError2: '次のレシートをスキャンしてください',
+                scanQRErrorDup: '領収書情報はすでに入力済みです，<br>次のレシートをスキャンしてください',
+                scanQRcodeLoading: 'データを検索中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -508,7 +508,7 @@
             },
             success: {
                 successTitle1: '印刷しています、しばらくお待ちください',
-                successTitle2: '_____番カウンターで資料の検査を行ってください',
+                successTitle2: '税金還付サービスカウンターでお手元の資料の確認を行ってください',
                 successTitle3: '税金還付手続きが全て完了していないと、税金の還付が受けられなくなります',
                 successTitle4: '',
                 toHomeText: 'サービスのホーム画面に戻る',
@@ -556,9 +556,9 @@
                 scanError: '인식할 수 없습니다. 여권을 다시 스캔하세요',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                scanPassportLoading: '여권 스캔 중<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerting: '정보 인증 중<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted: '<div style="margin-top: 10px;">인증 성공</div>'
             },
             scanPermit: {
                 scanPermitTitle: '타이완 입국증 바코드를 스캔하세요',
@@ -566,8 +566,8 @@
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
                 putPermit: '타이완 입국증 왼쪽 상단의 바코드를 적외선 스캐너에 맞추세요.',
-                permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                permitCerting: '정보 인증 중<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                permitCerted: '<div style="margin-top: 10px;">인증 성공</div>'
             },
             error: {
                 errorTitle: '',
@@ -598,8 +598,8 @@
 
                 scanQRError1: '세금을 환급할 수 없는 영수증 명세입니다.<br>다음 장을 스캔하세요',
                 scanQRError2: '다음 장을 스캔하세요',
-                scanQRErrorDup: '發票重複輸入，<br>다음 장을 스캔하세요',
-                scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                scanQRErrorDup: '영수증 정보 중복 입력，<br>다음 장을 스캔하세요',
+                scanQRcodeLoading: '정보 조회 중<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -623,7 +623,7 @@
             },
             success: {
                 successTitle1: '인쇄 중, 잠시만 기다려 주세요!',
-                successTitle2: ' ----번 카운터에서 서류를 확인하세요',
+                successTitle2: '세금환급 서비스 카운터로 가서 서류를 확인하세요',
                 successTitle3: '모든 세금환급 절차가 아직 완료되지 않아 환급금을 수령할 수 없습니다.',
                 successTitle4: '',
                 toHomeText: '홈으로 돌아가기',
@@ -672,9 +672,9 @@
                 scanError: 'ไม่สามารถระบุได้ โปรดสแกนหนังสือเดินทางของคุณใหม่อีกครั้ง',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                scanPassportLoading: 'กำลังสแกนหนังสือเดินทาง<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerting: 'กำลังยืนยันข้อมูล<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted: '<div style="margin-top: 10px;">ยืนยันสำเร็จ</div>'
             },
             scanPermit: {
                 scanPermitTitle: 'โปรดสแกนบาร์โค้ดใบบันทึกข้อมูลขาเข้าของคุณ',
@@ -682,8 +682,8 @@
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
                 putPermit: 'โปรดวางบาร์โค้ดที่มุมด้านซ้ายบนของใบบันทึกขาเข้าตรงเครื่องสแกนเนอร์อินฟราเรด',
-                permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                permitCerting: 'กำลังยืนยันข้อมูล<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                permitCerted: '<div style="margin-top: 10px;">ยืนยันสำเร็จ</div>'
             },
             error: {
                 errorTitle: '',
@@ -714,8 +714,8 @@
 
                 scanQRError1: 'รายละเอียดใบแจ้งหนี้ฉบับนี้ไม่สามารถยื่นเงินภาษีคืนได้<br>โปรดสแกนหน้าถัดไป',
                 scanQRError2: 'โปรดสแกนหน้าถัดไป',
-                scanQRErrorDup: '發票重複輸入，<br>โปรดสแกนหน้าถัดไป',
-                scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                scanQRErrorDup: 'ป้อนข้อมูลใบแจ้งหนี้ซ้ำ <br>โปรดสแกนหน้าถัดไป',
+                scanQRcodeLoading: 'กำลังตรวจสอบข้อมูล<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -739,7 +739,7 @@
             },
             success: {
                 successTitle1: 'กำลังพิมพ์ โปรดรอสักครู่!',
-                successTitle2: 'โปรดไปที่เคาน์เตอร์หมายเลข_____ เพื่อตรวจสอบเอกสาร',
+                successTitle2: 'โปรดไปที่เคาน์เตอร์บริการคืนเงินภาษีเพื่อตรวจสอบเอกสาร',
                 successTitle3: 'การดำเนินการตามขั้นตอนการขอคืนภาษีทั้งหมดยังไม่แสร็จสิ้น อาจทำให้คุณไม่สามารถขอรับเงินภาษีคืนได้',
                 successTitle4: '',
                 toHomeText: 'กลับไปที่หน้าแรกของบริการ',
@@ -901,9 +901,9 @@
                 scanError: 'Fallo de reconocimiento. Vuelva a escanear su pasaporte.',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                scanPassportLoading: 'Escaneando pasaporte<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerting: 'Verificando<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted: '<div style="margin-top: 10px;">Verificado con éxito</div>'
             },
             scanPermit: {
                 scanPermitTitle: 'Escanee el código de barras de su certificado de entrada a Taiwán',
@@ -911,8 +911,8 @@
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
                 putPermit: 'Alinee el código de barras de la parte superior izquierda del certificado de entrada a Taiwán con la línea roja del escáner',
-                permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                permitCerting: 'Verificando<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                permitCerted: '<div style="margin-top: 10px;">Verificado con éxito</div>'
             },
             error: {
                 errorTitle: '',
@@ -943,8 +943,8 @@
 
                 scanQRError1: 'No se pueden devolver los impuestos de esta factura.<br>Escanee la siguiente factura',
                 scanQRError2: 'Escanee la siguiente factura',
-                scanQRErrorDup: '發票重複輸入，<br>Escanee la siguiente factura',
-                scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                scanQRErrorDup: 'Datos de factura ya introducidos.<br>Escanee la siguiente factura',
+                scanQRcodeLoading: 'Consultando…<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -968,7 +968,7 @@
             },
             success: {
                 successTitle1: 'Imprimiendo. Por favor, espere.',
-                successTitle2: 'Acuda al mostrador Nº _____ para comprobar los documentos',
+                successTitle2: 'Acuda al Centro de Reembolso de Impuestos para la verificación final de documentos.',
                 successTitle3: 'No completar el procedimiento de devolución de impuestos podría impedirle recoger la cantidad a devolver',
                 successTitle4: '',
                 toHomeText: 'Regresar a la página <br/>principal del servicio',
@@ -1227,9 +1227,9 @@
                 scanError: 'Không thể xác nhận , vui lòng quét lại hộ chiếu của bạn',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                scanPassportLoading: 'Đang quét hộ chiếu<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerting: 'Đang xác minh dữ liệu<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted: '<div style="margin-top: 10px;">Xác minh thành công</div>'
             },
             scanPermit: {
                 scanPermitTitle: 'Vui lòng quét mã vạch thẻ nhập cảnh của bạn',
@@ -1237,8 +1237,8 @@
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
                 putPermit: 'Vui lòng căn chỉnh mã vạch ở phía trên bên trái của thẻ nhập cảnh với máy quét hồng ngoại.',
-                permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
+                permitCerting: 'Đang xác minh dữ liệu<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                permitCerted: '<div style="margin-top: 10px;">Xác minh thành công</div>'
             },
             error: {
                 errorTitle: '',
@@ -1267,8 +1267,8 @@
 
                 scanQRError1: 'Hóa đơn này không được hoàn thuế.<br>Vui lòng quét trang tiếp theo',
                 scanQRError2: 'Vui lòng quét trang tiếp theo',
-                scanQRErrorDup: '發票重複輸入，<br>Vui lòng quét trang tiếp theo',
-                scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                scanQRErrorDup: 'Hóa đơn bị lặp lại.<br>Vui lòng quét trang tiếp theo',
+                scanQRcodeLoading: 'Đang tra tìm dữ liệu<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -1292,7 +1292,7 @@
             },
             success: {
                 successTitle1: 'Đang in , xin chờ chút !',
-                successTitle2: 'Vui lòng đến quầy số _____ để kiểm tra giấy tờ',
+                successTitle2: 'Vui lòng đến quầy dịch vụ hoàn thuế để kiểm tra giấy tờ',
                 successTitle3: 'Không hoàn thành tất cả các thủ tục hoàn thuế sẽ dẫn đến việc bạn không thể lĩnh tiền thuế',
                 successTitle4: '',
                 toHomeText: 'Trở về trang chủ chính',
