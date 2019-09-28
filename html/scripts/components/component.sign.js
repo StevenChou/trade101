@@ -25,7 +25,7 @@ Vue.component('component-sign-main', {
       // canvas.width = canvas.width;
     },
     sendData: function() {
-      alert('sending data...');
+      // alert('sending data...');
       this.handleMouseDown(this.wording.toSuccess);
     },
     download: function() {
@@ -36,14 +36,26 @@ Vue.component('component-sign-main', {
         sign: this.myCanvas.toDataURL().split(',')[1]
       };
 
+      Swal.fire({
+        title:
+          '<span style="font-size: 24px;">' +
+          kiosk.wording[this.culture].scanQRcode.dataProcess +
+          '</span>',
+        html:
+          '<div style="margin-top: 15px; margin-left: 25px;" class="lds-dual-ring"></div>',
+        showConfirmButton: false
+      });
+
       const signObj = this;
       External.TradevanKioskCommon.CommonService.Sign(
         JSON.stringify(data),
         function(res) {
+          // 列印退稅單 API 已回覆，關閉資料處理視窗!!
+          Swal.close();
           // TODO 狀態判斷
           kiosk.API.Device.WEBCAM.Capture(
             function(res) {
-              alert(JSON.stringify(res));
+              // alert(JSON.stringify(res));
 
               signObj.handleMouseDown(signObj.wording.toSuccess);
             },
@@ -234,20 +246,20 @@ Vue.component('component-sign-main', {
   },
   created: function() {
     console.log('>>> sign created!!');
-    kiosk.app.axiosInstances.ap101
-      .get('/users.json')
-      .then(function(res) {
-        const users = [];
-        for (let key in res.data) {
-          const user = res.data[key];
-          user.id = key;
-          users.push(user);
-          console.log('>>>[axios instance ap101] user:', user.email);
-        }
-      })
-      .catch(function(err) {
-        console.log('>>> error:', err);
-      });
+    // kiosk.app.axiosInstances.ap101
+    //   .get('/users.json')
+    //   .then(function(res) {
+    //     const users = [];
+    //     for (let key in res.data) {
+    //       const user = res.data[key];
+    //       user.id = key;
+    //       users.push(user);
+    //       console.log('>>>[axios instance ap101] user:', user.email);
+    //     }
+    //   })
+    //   .catch(function(err) {
+    //     console.log('>>> error:', err);
+    //   });
   },
   destroyed: function() {
     console.log('>>>sign destroyed!!');

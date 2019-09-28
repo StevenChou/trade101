@@ -496,7 +496,7 @@ var kiosk = kiosk || {};
       created: function() {
         console.log('>>> mainApp created!!');
         this.axiosInstances.ap101 = axios.create({
-          baseURL: 'https://vuejs-axios-78898.firebaseio.com'
+          baseURL: 'http://172.16.41.59:7066'
         });
 
         this.axiosInstances.apTrade = axios.create({

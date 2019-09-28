@@ -63,7 +63,7 @@
                 prePage: 'Back'
             },
             mainMenu: {
-                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to Tax Refund Application Kiosk",
                 mainMenuTitle3: "Please select language to start",
                 lang02: '繁體中文',
@@ -141,6 +141,7 @@
                 scanQRError2: 'please scan next invoice.',
                 scanQRErrorDup: 'Verification success，<br>please scan next invoice.',
                 scanQRcodeLoading: 'Querying…<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                dataProcess: 'Processing, please wait.',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -164,7 +165,7 @@
             },
             success: {
                 successTitle1: 'Your application form is being printed now, thank you for patience.',
-                successTitle2: 'Please proceed to Tax Refund Center for final document verification.',
+                successTitle2: 'Please proceed to counter 2 of Customer Service Center for final document verification.',
                 successTitle3: "Reminder! You won't be able to claim tax refund if application process is unncompleted.",
                 successTitle4: '',
                 toHomeText: 'Back to Homepage',
@@ -178,7 +179,7 @@
                 prePage: '上一頁'
             },
             mainMenu: {
-                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -232,7 +233,7 @@
             },
             preScanQRcode: {
                 preScanQRcodeTitle: '準備掃描購物發票明細條碼',
-                btScanQRcode: '開始掃描',
+                btScanQRcode: '開始掃描',                
                 toScanQR: 'scanQRcode',
             },
             scanQRcode: {
@@ -256,6 +257,7 @@
                 scanQRError2: '請掃描下一張',
                 scanQRErrorDup:'發票重複輸入，<br>請掃描下一張',
                 scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                dataProcess: '作業中，請稍候',
                 toDetail: 'detail',
                 toSign: 'sign',                
             },
@@ -279,7 +281,7 @@
             },
             success: {
                 successTitle1: '列印中，請稍後!',
-                successTitle2: '請至退稅服務櫃檯查驗文件',
+                successTitle2: '請至 2 號櫃檯查驗文件',
                 successTitle3: '未完成所有退稅手續會導致您無法領取稅金',
                 successTitle4: '',
                 toHomeText: '回服務首頁',
@@ -292,7 +294,7 @@
                 prePage: '上一页'
             },
             mainMenu: {
-                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -370,6 +372,7 @@
                 scanQRError2: '请扫描下一张',
                 scanQRErrorDup: '发票资料重复输入，<br>请扫描下一张',
                 scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                dataProcess: '作业中，请稍候',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -393,7 +396,7 @@
             },
             success: {
                 successTitle1: '列印中，请稍後!',
-                successTitle2: '请至退税服务柜台查验文件',
+                successTitle2: '请至 2 号柜台查验文件',
                 successTitle3: '未完成所有退税手续会导致您无法领取税金',
                 successTitle4: '',
                 toHomeText: '回服务首页',
@@ -407,7 +410,7 @@
                 prePage: '前の画面に戻る'
             },
             mainMenu: {
-                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -485,6 +488,7 @@
                 scanQRError2: '次のレシートをスキャンしてください',
                 scanQRErrorDup: '領収書情報はすでに入力済みです，<br>次のレシートをスキャンしてください',
                 scanQRcodeLoading: 'データを検索中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                dataProcess: 'お待ちください',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -508,7 +512,7 @@
             },
             success: {
                 successTitle1: '印刷しています、しばらくお待ちください',
-                successTitle2: '税金還付サービスカウンターでお手元の資料の確認を行ってください',
+                successTitle2: '2 番カウンターで資料の検査を行ってください',
                 successTitle3: '税金還付手続きが全て完了していないと、税金の還付が受けられなくなります',
                 successTitle4: '',
                 toHomeText: 'サービスのホーム画面に戻る',
@@ -522,7 +526,7 @@
                 prePage: '이전'
             },
             mainMenu: {
-                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -600,6 +604,7 @@
                 scanQRError2: '다음 장을 스캔하세요',
                 scanQRErrorDup: '영수증 정보 중복 입력，<br>다음 장을 스캔하세요',
                 scanQRcodeLoading: '정보 조회 중<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                dataProcess: '기다려주세요',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -623,7 +628,7 @@
             },
             success: {
                 successTitle1: '인쇄 중, 잠시만 기다려 주세요!',
-                successTitle2: '세금환급 서비스 카운터로 가서 서류를 확인하세요',
+                successTitle2: '2 번 카운터에서 서류를 확인하세요',
                 successTitle3: '모든 세금환급 절차가 아직 완료되지 않아 환급금을 수령할 수 없습니다.',
                 successTitle4: '',
                 toHomeText: '홈으로 돌아가기',
@@ -638,7 +643,7 @@
                 prePage: 'หน้าที่แล้ว'
             },
             mainMenu: {
-                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -716,6 +721,7 @@
                 scanQRError2: 'โปรดสแกนหน้าถัดไป',
                 scanQRErrorDup: 'ป้อนข้อมูลใบแจ้งหนี้ซ้ำ <br>โปรดสแกนหน้าถัดไป',
                 scanQRcodeLoading: 'กำลังตรวจสอบข้อมูล<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                dataProcess: 'กรุณารอสักครู่',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -739,7 +745,7 @@
             },
             success: {
                 successTitle1: 'กำลังพิมพ์ โปรดรอสักครู่!',
-                successTitle2: 'โปรดไปที่เคาน์เตอร์บริการคืนเงินภาษีเพื่อตรวจสอบเอกสาร',
+                successTitle2: 'โปรดไปที่เคาน์เตอร์หมายเลข 2 เพื่อตรวจสอบเอกสาร',
                 successTitle3: 'การดำเนินการตามขั้นตอนการขอคืนภาษีทั้งหมดยังไม่แสร็จสิ้น อาจทำให้คุณไม่สามารถขอรับเงินภาษีคืนได้',
                 successTitle4: '',
                 toHomeText: 'กลับไปที่หน้าแรกของบริการ',
@@ -753,7 +759,7 @@
                 prePage: 'الصفحة السابقة'
             },
             mainMenu: {
-                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -867,7 +873,7 @@
                 prePage: 'Página anterior'
             },
             mainMenu: {
-                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -945,6 +951,7 @@
                 scanQRError2: 'Escanee la siguiente factura',
                 scanQRErrorDup: 'Datos de factura ya introducidos.<br>Escanee la siguiente factura',
                 scanQRcodeLoading: 'Consultando…<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                dataProcess: 'Por favor espera',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -968,7 +975,7 @@
             },
             success: {
                 successTitle1: 'Imprimiendo. Por favor, espere.',
-                successTitle2: 'Acuda al Centro de Reembolso de Impuestos para la verificación final de documentos.',
+                successTitle2: 'Acuda al mostrador Nº 2 para comprobar los documentos',
                 successTitle3: 'No completar el procedimiento de devolución de impuestos podría impedirle recoger la cantidad a devolver',
                 successTitle4: '',
                 toHomeText: 'Regresar a la página <br/>principal del servicio',
@@ -1193,7 +1200,7 @@
                 prePage: 'Trang trước'
             },
             mainMenu: {
-                mainMenuTitle1: "欢迎使用自助退税服务，请选择语言",
+                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk.",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -1269,6 +1276,7 @@
                 scanQRError2: 'Vui lòng quét trang tiếp theo',
                 scanQRErrorDup: 'Hóa đơn bị lặp lại.<br>Vui lòng quét trang tiếp theo',
                 scanQRcodeLoading: 'Đang tra tìm dữ liệu<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                dataProcess: 'Xin vui lòng chờ',
                 toDetail: 'detail',
                 toSign: 'sign',
             },
@@ -1292,7 +1300,7 @@
             },
             success: {
                 successTitle1: 'Đang in , xin chờ chút !',
-                successTitle2: 'Vui lòng đến quầy dịch vụ hoàn thuế để kiểm tra giấy tờ',
+                successTitle2: 'Vui lòng đến quầy số 2 để kiểm tra giấy tờ',
                 successTitle3: 'Không hoàn thành tất cả các thủ tục hoàn thuế sẽ dẫn đến việc bạn không thể lĩnh tiền thuế',
                 successTitle4: '',
                 toHomeText: 'Trở về trang chủ chính',

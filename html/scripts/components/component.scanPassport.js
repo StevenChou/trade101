@@ -53,12 +53,12 @@ Vue.component('component-scanPassport-main', {
                   function(res) {
                     //alert('>>> json string:' + res);
                     const resObj = JSON.parse(res);
-                    alert(
-                      '>>> 回傳資訊:' +
-                        resObj.result['message'] +
-                        '---' +
-                        resObj.result['status']
-                    );
+                    // alert(
+                    //   '>>> 回傳資訊:' +
+                    //     resObj.result['message'] +
+                    //     '---' +
+                    //     resObj.result['status']
+                    // );
 
                     // succ
                     if (resObj && resObj.result['status'] === '000') {
@@ -121,6 +121,12 @@ Vue.component('component-scanPassport-main', {
     storeUserData: function(passportObj, validationObj) {
       kiosk.app.$data.userData['passportNo'] = passportObj['documentNumber'];
       kiosk.app.$data.userData['country'] = passportObj['nationality'];
+      kiosk.app.$data.userData['inDate'] = validationObj.result['inDate']
+        .split(' ')[0]
+        .split('-')
+        .join('');
+      kiosk.app.$data.userData['idn'] = validationObj.result['idn'];
+      kiosk.app.$data.userData['ename'] = validationObj.result['ename'];
       kiosk.app.$data.userData['dayAmtTotal'] =
         validationObj.result['dayAmtTotal'];
     },

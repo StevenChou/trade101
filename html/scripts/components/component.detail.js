@@ -38,6 +38,9 @@ Vue.component('component-detail-main', {
           }));
         return !row.check;
       });
+
+      // alert('>>> 刪除後的發票:' + JSON.stringify(this.rows));
+      // alert('>>> 刪除後的品項:' + JSON.stringify(detailObj.items));
     },
     hasCheckProperty: function() {
       let isValid = true;

@@ -31,46 +31,65 @@ Vue.component('component-scanQRcode-main', {
         if (this.wording.toSign === nextId) {
           kiosk.app.$data.lockBtn = true;
 
-          const testData = [
-            {
-              unvAmt: 20000,
-              qty: 2,
-              itemCname: '筆電',
-              brandCname: '宏碁',
-              unvNo: 'SW08220018',
-              modelCname: 'ACER'
-            }
-          ];
+          // const testData = [
+          //   {
+          //     unvAmt: 20000,
+          //     qty: 2,
+          //     itemCname: '筆電',
+          //     brandCname: '宏碁',
+          //     unvNo: 'SW08220018',
+          //     modelCname: 'ACER'
+          //   }
+          // ];
 
-          //開立小額單
+          // 開立小額單
           const data = {
-            passportNo: '108670735170',
-            country: 'CN',
-            inDate: '20190617',
-            idn: '321102199612261047',
-            ename: 'WHALEBRO',
-            //applyMainList: this.transformItems()
-            applyMainList: testData
+            // passportNo: '108670735170',
+            passportNo: kiosk.app.$data.userData['passportNo'],
+            // country: 'CN',
+            country: kiosk.app.$data.userData['country'],
+            inDate: kiosk.app.$data.userData['inDate'],
+            idn: kiosk.app.$data.userData['idn'],
+            ename: kiosk.app.$data.userData['ename'],
+            applyMainList: this.transformItems()
+            // applyMainList: testData
           };
 
-          // alert('>>> sendData:' + JSON.stringify(data));
+          // ***** 最重要的資訊[Debug] *****
+          // alert('>>> userdata' + kiosk.app.$data.userData['country']);
+          // alert('>>> country' + kiosk.app.$data.userData['country']);
+          // alert('>>> 開立小額單 sendData:' + JSON.stringify(data));
+          // ***** 最重要的資訊[Debug] *****
 
           // [ TODO ] 沒有品項，lock btn!!
 
           // alert('>>> data.applyMainList.length:' + data.applyMainList.length);
           // alert('>>> data.applyMainList[0]:' + data.applyMainList[0].unvNo);
 
+          Swal.fire({
+            title:
+              '<span style="font-size: 24px;">' +
+              kiosk.wording[this.culture].scanQRcode.dataProcess +
+              '</span>',
+            html:
+              '<div style="margin-top: 15px; margin-left: 25px;" class="lds-dual-ring"></div>',
+            showConfirmButton: false
+          });
+
+          // for 測試使用
+          // setTimeout(function() {
+          //   kiosk.API.goToNext(nextId);
+          //   Swal.close();
+          // }, 3000);
+
           External.TradevanKioskCommon.CommonService.Apply(
             JSON.stringify(data),
             function(res) {
+              // 開立小額 API 已回覆，關閉資料處理視窗!!
+              Swal.close();
+
               // alert('>>> scanQRcode:' + res);
               const resObj = JSON.parse(res);
-              alert(
-                '>>> 回傳資訊:' +
-                  resObj.result['message'] +
-                  '---' +
-                  resObj.result['status']
-              );
 
               if (resObj && resObj.result['status'] === '000') {
                 // *** 儲存開立單號(taxAppNo)
@@ -79,6 +98,12 @@ Vue.component('component-scanQRcode-main', {
                 kiosk.API.goToNext(nextId);
               } else {
                 kiosk.app.$data.lockBtn = false;
+                alert(
+                  '>>> 回傳資訊:' +
+                    resObj.result['message'] +
+                    '---' +
+                    resObj.result['status']
+                );
                 // 這邊要改阿
                 // for testing  之後要刪掉!!
                 // kiosk.API.goToNext(nextId);
@@ -96,28 +121,38 @@ Vue.component('component-scanQRcode-main', {
       this.megCode = 'scanQRcodeLoading';
       kiosk.app.$data.lockBtn = true;
 
-      alert(
-        '>>> invNo:' +
-          invNo.substr(0, invNo.length - 4) +
-          ' --- random:' +
-          invNo.substr(invNo.length - 4, 4)
-      );
+      // 發票號碼
+      const invNo_1 = invNo.substr(0, invNo.length - 4);
+      // 隨機碼
+      const invNo_2 = invNo.substr(invNo.length - 4, 4);
 
-      kiosk.app.axiosInstances.apTrade
-        .get('/data.json', {
-          params: {
-            invNo: invNo,
-            randomCode: invNo.substr(invNo.length - 4, 4)
+      // 掃描的發票號碼 + 隨機碼
+      // alert('>>> 發票號碼:' + invNo_1 + ' --- 隨機碼:' + invNo_2);
+
+      kiosk.app.axiosInstances.ap101
+        .post('/wsChiefPOS.asmx', {
+          Trans: {
+            T0100: '0300',
+            T0300: '220000',
+            T1200: '154600',
+            T1300: '20190919',
+            T4200: '16095410',
+            T5501: '154600',
+            T5504: '123456',
+            T5505: '154600',
+            T5507: invNo_1,
+            T5509: 'K',
+            T5513: invNo_2
           }
         })
         .then(function(res) {
-          if (scanQRcode.isValidInvItem(res.data, invNo)) {
+          if (scanQRcode.isValidInvItem(res.data, invNo_1)) {
             // scanQRcode.addInvItem(res.data, invNo);
             // scanQRcode.addInvNum(invNo);
-            scanQRcode.addInvItem(res.data, invNo.substr(0, invNo.length - 4));
-            scanQRcode.addInvNum(invNo.substr(0, invNo.length - 4));
-            scanQRcode.number = scanQRcode.invoiceNum.length;
-            scanQRcode.amount = scanQRcode.calcuAmt();
+            scanQRcode.addInvItem(res.data, invNo_1);
+            // scanQRcode.addInvNum(invNo.substr(0, invNo.length - 4));
+            // scanQRcode.number = scanQRcode.invoiceNum.length;
+            // scanQRcode.amount = scanQRcode.calcuAmt();
           }
         })
         .catch(function(err) {
@@ -138,6 +173,7 @@ Vue.component('component-scanQRcode-main', {
         });
     },
     isValidInvItem: function(res, invNo) {
+      // 驗證發票
       let isValid = true;
       isValid = isValid && this.isValidNo(invNo);
       isValid = isValid && !this.isDup(invNo);
@@ -168,9 +204,9 @@ Vue.component('component-scanQRcode-main', {
       const args = arguments;
       this.invoiceItems.forEach(function(invoice) {
         if (args.length === 0) {
-          sum += invoice.unvAmt;
+          sum += parseInt(invoice.unvAmt);
         } else {
-          args[0] === invoice.invNo && (sum += invoice.unvAmt);
+          args[0] === invoice.invNo && (sum += parseInt(invoice.unvAmt));
         }
       });
 
@@ -187,29 +223,48 @@ Vue.component('component-scanQRcode-main', {
       // alert('>>> 伺服器回傳資料:' + res.username);
       const scanQRcode = this;
 
-      // 模擬回傳資料
-      const invoiceData = {
-        rows: [
-          {
-            invNo: invNo,
-            cname: '筆電' + Math.random(),
-            brand: 'ACER',
-            model: 'ACER',
-            unitAmt: 2000,
-            qty: 2,
-            unvAmt: 4000
-          },
-          {
-            invNo: invNo,
-            cname: '平板' + Math.random(),
-            brand: 'APPLE',
-            model: 'APPLE ipad air 3rd',
-            unitAmt: 1000,
-            qty: 3,
-            unvAmt: 3000
-          }
-        ]
-      };
+      // 模擬回傳資料[只能吃這個格式]
+      // const invoiceData = {
+      //   rows: [
+      //     {
+      //       invNo: invNo,
+      //       cname: '筆電' + Math.random(),
+      //       brand: 'ACER',
+      //       model: 'ACER',
+      //       unitAmt: 2000,
+      //       qty: 2,
+      //       unvAmt: 4000
+      //     },
+      //     {
+      //       invNo: invNo,
+      //       cname: '平板' + Math.random(),
+      //       brand: 'APPLE',
+      //       model: 'APPLE ipad air 3rd',
+      //       unitAmt: 1000,
+      //       qty: 3,
+      //       unvAmt: 3000
+      //     }
+      //   ]
+      // };
+
+      // 將 101 API 資料，轉換為關貿格式
+      const invoiceData = this.transDataFormat(res, invNo);
+
+      // **** 當有一筆不能退的時候 return
+      if (invoiceData.isRefund === 'N') {
+        // 此發票不能退稅，因為其中一筆品項不能退
+        Swal.fire({
+          type: 'warning',
+          // title: '糟糕...',
+          // text: '此發票無法退稅，因為其中一筆品項不能退稅!',
+          html: '<h3>此發票無法退稅，因為其中一筆品項不能退稅!</h3>'
+          // footer: '<a href>請通知客服~</a>'
+        });
+
+        return;
+      }
+
+      // alert('>>> 加入品項前:' + JSON.stringify(scanQRcode.invoiceItems));
 
       // add check property
       invoiceData.rows.forEach(function(invoiceItem) {
@@ -217,6 +272,10 @@ Vue.component('component-scanQRcode-main', {
         // data
         scanQRcode.invoiceItems.push(invoiceItem);
       });
+
+      // scanQRcode.addInvNum(invNo);
+      // alert('>>> 加入發票:' + JSON.stringify(scanQRcode.invoiceNum));
+      // alert('>>> 加入品項後:' + JSON.stringify(scanQRcode.invoiceItems));
 
       const sendData = {
         rows: []
@@ -230,9 +289,40 @@ Vue.component('component-scanQRcode-main', {
         function(res) {
           // alert('>>> refundAmt:' + JSON.parse(res).result.refundAmt);
           scanQRcode.netTaxRefund = JSON.parse(res).result.refundAmt;
+
+          // 處理非同步的問題
+          scanQRcode.addInvNum(invNo);
+          scanQRcode.number = scanQRcode.invoiceNum.length;
+          scanQRcode.amount = scanQRcode.calcuAmt();
+
+          // alert('>>> 加入發票:' + JSON.stringify(scanQRcode.invoiceNum));
+          // alert('>>> 加入品項後:' + JSON.stringify(scanQRcode.invoiceItems));
         },
         function() {}
       );
+    },
+    transDataFormat: function(res, invNo) {
+      const tempData = { rows: [], isRefund: 'Y' };
+      // 商品資料
+      res.Trans.T5571.forEach(function(invoiceItem) {
+        let combiData = {
+          invNo: invNo,
+          cname: invoiceItem['T557107'],
+          brand: res.Trans['T4236'],
+          model: invoiceItem['T557124'],
+          unitAmt: invoiceItem['T557104'],
+          qty: invoiceItem['T557102'],
+          unvAmt: invoiceItem['T557103']
+        };
+
+        if (invoiceItem['T557113'] === 'N') {
+          tempData.isRefund = 'N';
+        }
+
+        tempData.rows.push(combiData);
+      });
+
+      return tempData;
     },
     transformItems: function() {
       // console.log('>>> old data:', this.invoiceItems);
@@ -269,6 +359,50 @@ Vue.component('component-scanQRcode-main', {
     },
     StopScanner: function() {
       kiosk.API.Device.Scanner.stopScanner();
+    },
+    unitTest: function() {
+      const invoice_number = 'UF191588983036';
+      const invNo_1 = invoice_number.substr(0, invoice_number.length - 4);
+      const invNo_2 = invoice_number.substr(invoice_number.length - 4, 4);
+      // alert('>>> 發票號碼:' + invNo_1 + ' --- 隨機碼:' + invNo_2);
+
+      this.invoiceNum.push({
+        invNo: invNo_1,
+        check: false,
+        unitAmt: '10000'
+      });
+      const ans = this.isValidInvItem('', invNo_1);
+      // alert('Unit Test:' + ans);
+
+      // 模擬開始 IE AJAX 測試
+      // this.getInvNoInfo(invoice_number);
+
+      // 模擬 res 物件
+      const mockResData = {
+        Trans: {
+          T5503: '勞力士',
+          T5571: [
+            {
+              T557107: '綠水鬼',
+              T557124: 'rodex_101_001',
+              T557104: '300000',
+              T557102: '2',
+              T557103: '600000',
+              T557113: 'Y'
+            },
+            {
+              T557107: '黑水鬼',
+              T557124: 'rodex_101_002',
+              T557104: '250000',
+              T557102: '3',
+              T557103: '750000',
+              T557113: 'Y'
+            }
+          ]
+        }
+      };
+
+      this.addInvItem(mockResData, 'UA95234159');
     }
   },
   computed: {
@@ -332,6 +466,9 @@ Vue.component('component-scanQRcode-main', {
     }
   },
   mounted: function() {
+    // 啟動單元測試
+    // this.unitTest();
+
     const scanQRcode = this;
     this.invoiceItems = kiosk.app.$data.invoiceItems;
     this.invoiceNum = kiosk.app.$data.invoiceNum;
