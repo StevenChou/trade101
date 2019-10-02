@@ -73,7 +73,8 @@ Vue.component('component-scanQRcode-main', {
               '</span>',
             html:
               '<div style="margin-top: 15px; margin-left: 25px;" class="lds-dual-ring"></div>',
-            showConfirmButton: false
+            showConfirmButton: false,
+            allowOutsideClick: false
           });
 
           // for 測試使用

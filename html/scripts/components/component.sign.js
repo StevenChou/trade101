@@ -43,7 +43,8 @@ Vue.component('component-sign-main', {
           '</span>',
         html:
           '<div style="margin-top: 15px; margin-left: 25px;" class="lds-dual-ring"></div>',
-        showConfirmButton: false
+        showConfirmButton: false,
+        allowOutsideClick: false
       });
 
       const signObj = this;

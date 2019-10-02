@@ -16,6 +16,22 @@ Vue.component('component-preScanQRcode-main', {
     },
     cultureFontStyle: function() {
       return kiosk.app.changeFontFamily(this.culture);
+    },
+    titleFontSize: function() {
+      let fontSize = null;
+      switch (this.culture) {
+        case 1:
+        case 7:
+        case 3:
+          fontSize = 36;
+          break;
+        default:
+          fontSize = 48;
+      }
+      return {
+        fontSize: fontSize + 'px',
+        marginTop: '20px'
+      };
     }
   }
 });

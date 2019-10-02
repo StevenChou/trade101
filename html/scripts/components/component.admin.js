@@ -12,6 +12,18 @@ Vue.component('component-admin-main', {
     btnAct: function(actType) {
       const adminObj = this;
       switch (actType) {
+        case 'CLOSE_APP':
+          alert('CLOSE_APP');
+          kiosk.API.System.ShotDownApp();
+          break;
+        case 'SHUT_DOWN':
+          alert('SHUT_DOWN');
+          kiosk.API.System.ShudDown();
+          break;
+        case 'REBOOT':
+          alert('REBOOT');
+          kiosk.API.System.Reboot();
+          break;
         case 'SCAN_START':
           kiosk.API.Device.Scanner.startScanner(
             '',
