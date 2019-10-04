@@ -51,13 +51,13 @@ Vue.component('component-sign-main', {
       External.TradevanKioskCommon.CommonService.Sign(
         JSON.stringify(data),
         function(res) {
-          // 列印退稅單 API 已回覆，關閉資料處理視窗!!
-          Swal.close();
           // TODO 狀態判斷
           kiosk.API.Device.WEBCAM.Capture(
             function(res) {
               // alert(JSON.stringify(res));
 
+              // 列印退稅單 API 已回覆，關閉資料處理視窗!!
+              Swal.close();
               signObj.handleMouseDown(signObj.wording.toSuccess);
             },
             function() {},

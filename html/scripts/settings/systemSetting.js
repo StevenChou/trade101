@@ -63,7 +63,7 @@
                 prePage: 'Back'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
+                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to Tax Refund Application Kiosk",
                 mainMenuTitle3: "Please select language to start",
                 lang02: '繁體中文',
@@ -179,7 +179,7 @@
                 prePage: '上一頁'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
+                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -294,7 +294,7 @@
                 prePage: '上一页'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
+                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -410,7 +410,7 @@
                 prePage: '前の画面に戻る'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
+                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -526,7 +526,7 @@
                 prePage: '이전'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
+                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -643,7 +643,7 @@
                 prePage: 'หน้าที่แล้ว'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
+                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -759,7 +759,7 @@
                 prePage: 'الصفحة السابقة'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
+                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -873,7 +873,7 @@
                 prePage: 'Página anterior'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
+                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',
@@ -1200,7 +1200,7 @@
                 prePage: 'Trang trước'
             },
             mainMenu: {
-                mainMenuTitle1: "歡迎使用自動退稅服務，請選擇語言",
+                mainMenuTitle1: "歡迎使用自助退稅服務，請選擇語言",
                 mainMenuTitle2: "Welcome to tax refund self-service kiosk.",
                 mainMenuTitle3: "Please select language",
                 lang02: '繁體中文',

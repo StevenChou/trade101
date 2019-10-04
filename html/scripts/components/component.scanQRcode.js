@@ -329,7 +329,7 @@ Vue.component('component-scanQRcode-main', {
       // console.log('>>> old data:', this.invoiceItems);
       return this.invoiceItems.map(function(item) {
         return {
-          unvAmt: item.unvAmt,
+          unvAmt: item.unitAmt,
           qty: item.qty,
           itemCname: item.cname,
           brandCname: item.brand,

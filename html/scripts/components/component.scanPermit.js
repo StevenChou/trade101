@@ -37,7 +37,9 @@ Vue.component('component-scanPermit-main', {
         // } else {
         //   alert('Bar code:' + res.substr(5, 14));
         // }
-        alert('>>> res:' + res);
+
+        // [TESTING] 測試訊息
+        // alert('>>> res:' + res);
 
         //查詢移民署
         const postData = {
@@ -45,7 +47,8 @@ Vue.component('component-scanPermit-main', {
           country: 'CN'
         };
 
-        alert('>>> postData:' + JSON.stringify(postData));
+        // [TESTING] 測試訊息
+        // alert('>>> postData:' + JSON.stringify(postData));
         External.TradevanKioskCommon.CommonService.CallImm(
           JSON.stringify(postData),
           function(res) {
@@ -60,13 +63,18 @@ Vue.component('component-scanPermit-main', {
 
             // succ
             if (resObj && resObj.result['status'] === '000') {
-              alert('>>> api成功');
+              // [TESTING] 測試訊息
+              // alert('>>> api成功');
+
               // scanPassportObj.lock = true;
 
               scanPermit.megCode = 'passportCerted';
 
               // global data --- 儲存護照相關資訊
-              scanPermit.storeUserData(jsonObj, resObj);
+              scanPermit.storeUserData(postData, resObj);
+              // alert(
+              //   '>>> 入境證旅客資訊:' + JSON.stringify(kiosk.app.$data.userData)
+              // );
 
               scanPermit.megCode = 'permitCerting';
               setTimeout(function() {
@@ -76,7 +84,9 @@ Vue.component('component-scanPermit-main', {
                 }, 1000);
               }, 1000);
             } else {
-              alert('>>> help me!! gg');
+              // [TESTING] 測試訊息
+              alert('>>> 請重新掃描');
+
               scanPermit.StartScanner();
             }
           },
@@ -85,8 +95,16 @@ Vue.component('component-scanPermit-main', {
       });
     },
     storeUserData: function(passportObj, validationObj) {
-      kiosk.app.$data.userData['passportNo'] = passportObj['documentNumber'];
-      kiosk.app.$data.userData['country'] = passportObj['nationality'];
+      kiosk.app.$data.userData['passportNo'] = passportObj['passportNo'].split(
+        '\r'
+      )[0];
+      kiosk.app.$data.userData['country'] = passportObj['country'];
+      kiosk.app.$data.userData['inDate'] = validationObj.result['inDate']
+        .split(' ')[0]
+        .split('-')
+        .join('');
+      kiosk.app.$data.userData['idn'] = validationObj.result['idn'];
+      kiosk.app.$data.userData['ename'] = validationObj.result['ename'];
       kiosk.app.$data.userData['dayAmtTotal'] =
         validationObj.result['dayAmtTotal'];
     },
