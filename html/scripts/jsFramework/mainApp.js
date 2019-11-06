@@ -470,6 +470,11 @@ var kiosk = kiosk || {};
           this.lockBtn = false;
           this.userData = {};
         },
+        autoHomePage: function(timer) {
+          return setTimeout(function() {
+            kiosk.API.goToNext('mainMenu');
+          }, timer);
+        },
         ErrorPage: function(msg) {}
       },
       mounted: function() {

@@ -2,7 +2,9 @@
 Vue.component('component-selectDoc-main', {
   template: '#template-selectDoc-main',
   props: ['model', 'culture'],
-
+  data: function() {
+    return { timer: null };
+  },
   methods: {
     // Btn Click
     handleMouseDown: function(nextId) {
@@ -60,6 +62,10 @@ Vue.component('component-selectDoc-main', {
   },
   created: function() {
     kiosk.app.clearUserData();
+    this.timer = kiosk.app.autoHomePage(20000);
+  },
+  destroyed: function() {
+    clearTimeout(this.timer);
   }
 });
 

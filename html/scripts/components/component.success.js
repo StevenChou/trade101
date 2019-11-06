@@ -2,6 +2,9 @@
 Vue.component('component-success-main', {
   template: '#template-success-main',
   props: ['model', 'culture'],
+  data: function() {
+    return { timer: null };
+  },
   methods: {
     // Btn Click
     goHome: function() {
@@ -70,6 +73,13 @@ Vue.component('component-success-main', {
     cultureFontStyle: function() {
       return kiosk.app.changeFontFamily(this.culture);
     }
+  },
+  created: function() {
+    kiosk.app.clearUserData();
+    this.timer = kiosk.app.autoHomePage(20000);
+  },
+  destroyed: function() {
+    clearTimeout(this.timer);
   }
 });
 

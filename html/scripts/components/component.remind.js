@@ -1,6 +1,9 @@
 Vue.component('component-remind-main', {
   template: '#template-remind-main',
   props: ['model', 'culture'],
+  data: function() {
+    return { timer: null };
+  },
   methods: {
     // Btn Click
     handleMouseDown: function(nextId) {
@@ -43,6 +46,10 @@ Vue.component('component-remind-main', {
   },
   created: function() {
     kiosk.app.clearUserData();
+    this.timer = kiosk.app.autoHomePage(20000);
+  },
+  destroyed: function() {
+    clearTimeout(this.timer);
   }
 });
 

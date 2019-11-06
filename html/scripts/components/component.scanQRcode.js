@@ -99,12 +99,17 @@ Vue.component('component-scanQRcode-main', {
                 kiosk.API.goToNext(nextId);
               } else {
                 kiosk.app.$data.lockBtn = false;
-                alert(
-                  '>>> 回傳資訊:' +
+
+                Swal.fire({
+                  type: 'error',
+                  title: '糟糕...',
+                  text:
+                    '>>> 回傳資訊:' +
                     resObj.result['message'] +
                     '---' +
-                    resObj.result['status']
-                );
+                    resObj.result['status'],
+                  footer: '<a href>請通知客服~</a>'
+                });
                 // 這邊要改阿
                 // for testing  之後要刪掉!!
                 // kiosk.API.goToNext(nextId);
@@ -157,6 +162,7 @@ Vue.component('component-scanQRcode-main', {
           }
         })
         .catch(function(err) {
+          kiosk.API.log.logInfo('>>> 錯誤紀錄:' + JSON.stringify(err));
           Swal.fire({
             type: 'error',
             title: '糟糕...',
