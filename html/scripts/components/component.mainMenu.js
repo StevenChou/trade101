@@ -36,6 +36,16 @@ Vue.component('component-mainMenu-main', {
       ) {
         kiosk.API.goToNext('keyboard');
       }
+    },
+    OpenSecondMonitor: function() {
+      var data = {};
+      External.TradevanKioskCommon.CommonService.OpenSecendMonitor(
+        JSON.stringify(data),
+        function(res) {
+          alert(JSON.stringify(res));
+        },
+        function() {}
+      );
     }
   },
   computed: {
@@ -47,6 +57,9 @@ Vue.component('component-mainMenu-main', {
     // 改放這裡了!!
     kiosk.API.initStatus();
     kiosk.app.clearUserData();
+
+    // 開啟第二螢幕
+    // this.OpenSecondMonitor();
   }
 });
 
