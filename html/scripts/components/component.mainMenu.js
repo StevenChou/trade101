@@ -59,7 +59,12 @@ Vue.component('component-mainMenu-main', {
     kiosk.app.clearUserData();
 
     // 開啟第二螢幕
-    // this.OpenSecondMonitor();
+    if (kiosk.app.getInitStatus()) {
+      // this.OpenSecondMonitor();
+    }
+  },
+  beforeDestroy: function() {
+    kiosk.app.setInitStatus(false);
   }
 });
 

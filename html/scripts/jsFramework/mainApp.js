@@ -357,6 +357,7 @@ var kiosk = kiosk || {};
         isScrollDisable: true,
         // add by whalebro
         axiosInstances: { ap101: null, apTrade: null },
+        isInit: true,
         invoiceItems: [],
         invoiceNum: [],
         lockBtn: false,
@@ -469,6 +470,12 @@ var kiosk = kiosk || {};
           this.invoiceNum = [];
           this.lockBtn = false;
           this.userData = {};
+        },
+        getInitStatus: function() {
+          return this.isInit;
+        },
+        setInitStatus: function(status) {
+          this.isInit = status;
         },
         autoHomePage: function(timer) {
           return setTimeout(function() {
