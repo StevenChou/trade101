@@ -45,7 +45,7 @@
     returnCulture = {
         1: "en",
         2: "zh_TW",
-        13:'zh_CN',
+        13: 'zh_CN',
         3: "jp",
         4: "ko",
         5: "th",
@@ -105,7 +105,7 @@
                 scanPermitTitle: 'Please scan barcode of your exit & entry permit.',
                 scanError: 'Recognition error, please scan barcode of your exit & entry permit again.',
                 toError: 'error',
-                toPreScanQR: 'preScanQRcode', 
+                toPreScanQR: 'preScanQRcode',
                 putPermit: 'Please target the barcode to infrared scanner.',
                 permitCerting: 'Verifying…<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">Verification success</div>'
@@ -139,6 +139,8 @@
 
                 scanQRError1: 'This invoice is ineligible for tax refund application in Taipei 101 Mall，<br>please scan next invoice.',
                 scanQRError2: 'please scan next invoice.',
+                scanQRError3: 'This invoice is invalid for application',
+                scanQRError4: 'This invoice may contain non-refundable purchase; or this invoice is not issued today.',
                 scanQRErrorDup: 'Verification success，<br>please scan next invoice.',
                 scanQRcodeLoading: 'Querying…<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 dataProcess: 'Processing, please wait.',
@@ -214,15 +216,15 @@
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
                 scanPassportLoading: '護照掃描中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerting:'資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
-                passportCerted:'<div style="margin-top: 10px;">驗證成功</div>'
+                passportCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
+                passportCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
             scanPermit: {
                 scanPermitTitle: '請掃描您的入境證條碼',
                 scanError: '無法辨識，請重新掃描入境證',
                 toError: 'error',
                 toPreScanQR: 'preScanQRcode',
-                putPermit:'請將入境證左上方條碼對準紅外線掃描器',
+                putPermit: '請將入境證左上方條碼對準紅外線掃描器',
                 permitCerting: '資料驗證中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 permitCerted: '<div style="margin-top: 10px;">驗證成功</div>'
             },
@@ -233,7 +235,7 @@
             },
             preScanQRcode: {
                 preScanQRcodeTitle: '準備掃描購物發票明細條碼',
-                btScanQRcode: '開始掃描',                
+                btScanQRcode: '開始掃描',
                 toScanQR: 'scanQRcode',
             },
             scanQRcode: {
@@ -255,11 +257,13 @@
 
                 scanQRError1: '此發票明細無法退稅，<br>請掃描下一張',
                 scanQRError2: '請掃描下一張',
-                scanQRErrorDup:'發票重複輸入，<br>請掃描下一張',
+                scanQRError3: '此發票無法退稅',
+                scanQRError4: '發票中可能包含無法退稅商品或不是今日消費的發票',
+                scanQRErrorDup: '發票重複輸入，<br>請掃描下一張',
                 scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 dataProcess: '作業中，請稍候',
                 toDetail: 'detail',
-                toSign: 'sign',                
+                toSign: 'sign',
             },
             detail: {
                 detailTitle1: '您已輸入的購物發票',
@@ -370,6 +374,8 @@
 
                 scanQRError1: '此发票明细无法退税，<br>请扫描下一张',
                 scanQRError2: '请扫描下一张',
+                scanQRError3: '此发票无法退税',
+                scanQRError4: '发票中可能包含无法退税商品或不是今日消费的发票',
                 scanQRErrorDup: '发票资料重复输入，<br>请扫描下一张',
                 scanQRcodeLoading: '資料查詢中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 dataProcess: '作业中，请稍候',
@@ -486,6 +492,8 @@
 
                 scanQRError1: 'このレシートの内容は税金還付手続きができません<br>次のレシートをスキャンしてください',
                 scanQRError2: '次のレシートをスキャンしてください',
+                scanQRError3: 'このレシートは税金還付ができません',
+                scanQRError4: '税金還付のできない商品が含まれているか、今日消費したレシートではない可能性があります。',
                 scanQRErrorDup: '領収書情報はすでに入力済みです，<br>次のレシートをスキャンしてください',
                 scanQRcodeLoading: 'データを検索中<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 dataProcess: 'お待ちください',
@@ -602,6 +610,8 @@
 
                 scanQRError1: '세금을 환급할 수 없는 영수증 명세입니다.<br>다음 장을 스캔하세요',
                 scanQRError2: '다음 장을 스캔하세요',
+                scanQRError3: '세금을 환급할 수 없는 영수증입니다.',
+                scanQRError4: '영수증에 세금을 환급할 수 없는 상품이 포함되어 있거나, 금일 구매하신 영수증이 아닙니다.',
                 scanQRErrorDup: '영수증 정보 중복 입력，<br>다음 장을 스캔하세요',
                 scanQRcodeLoading: '정보 조회 중<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 dataProcess: '기다려주세요',
@@ -719,6 +729,8 @@
 
                 scanQRError1: 'รายละเอียดใบแจ้งหนี้ฉบับนี้ไม่สามารถยื่นเงินภาษีคืนได้<br>โปรดสแกนหน้าถัดไป',
                 scanQRError2: 'โปรดสแกนหน้าถัดไป',
+                scanQRError3: 'ใบแจ้งหนี้ฉบับนี้ไม่สามารถคืนเงินภาษี',
+                scanQRError4: 'ใบแจ้งหนี้อาจหมายถึงสินค้าที่ไม่สามารถคืนเงินภาษีหรือเป็นใบแจ้งหนี้ที่ไม่ได้ใช้บริโภคภายในวันนั้นๆ',
                 scanQRErrorDup: 'ป้อนข้อมูลใบแจ้งหนี้ซ้ำ <br>โปรดสแกนหน้าถัดไป',
                 scanQRcodeLoading: 'กำลังตรวจสอบข้อมูล<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 dataProcess: 'กรุณารอสักครู่',
@@ -949,6 +961,8 @@
 
                 scanQRError1: 'No se pueden devolver los impuestos de esta factura.<br>Escanee la siguiente factura',
                 scanQRError2: 'Escanee la siguiente factura',
+                scanQRError3: 'No es posible devolver impuestos de este recibo.',
+                scanQRError4: 'Posiblemente el recibo contenga un artículo no sujeto a devolución de impuestos o el recibo no se corresponde a un compra realizada hoy.',
                 scanQRErrorDup: 'Datos de factura ya introducidos.<br>Escanee la siguiente factura',
                 scanQRcodeLoading: 'Consultando…<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 dataProcess: 'Por favor espera',
@@ -1274,6 +1288,8 @@
 
                 scanQRError1: 'Hóa đơn này không được hoàn thuế.<br>Vui lòng quét trang tiếp theo',
                 scanQRError2: 'Vui lòng quét trang tiếp theo',
+                scanQRError3: 'Hóa đơn này không được hoàn thuế.',
+                scanQRError4: 'Trong hóa đơn có thể bao gồm sản phẩm không được hoàn thuế hoặc không phải hóa đơn tiêu dùng trong ngày hôm nay .',
                 scanQRErrorDup: 'Hóa đơn bị lặp lại.<br>Vui lòng quét trang tiếp theo',
                 scanQRcodeLoading: 'Đang tra tìm dữ liệu<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
                 dataProcess: 'Xin vui lòng chờ',
