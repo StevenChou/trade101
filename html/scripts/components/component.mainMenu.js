@@ -39,10 +39,10 @@ Vue.component('component-mainMenu-main', {
     },
     OpenSecondMonitor: function() {
       var data = {};
-      External.TradevanKioskCommon.CommonService.OpenSecendMonitor(
+      External.TradevanKioskCommon.CommonService.OpenSecondMonitor(
         JSON.stringify(data),
         function(res) {
-          alert(JSON.stringify(res));
+          //alert(JSON.stringify(res));
         },
         function() {}
       );
@@ -60,7 +60,7 @@ Vue.component('component-mainMenu-main', {
 
     // 開啟第二螢幕
     if (kiosk.app.getInitStatus()) {
-      // this.OpenSecondMonitor();
+      this.OpenSecondMonitor();
     }
   },
   beforeDestroy: function() {
