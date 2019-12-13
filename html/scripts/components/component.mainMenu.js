@@ -39,10 +39,17 @@ Vue.component('component-mainMenu-main', {
     },
     OpenSecondMonitor: function() {
       var data = {};
-      External.TradevanKioskCommon.CommonService.OpenSecondMonitor(
+      External.TradevanKioskCommon.CommonService.CloseSecondMonitor(
         JSON.stringify(data),
         function(res) {
-          //alert(JSON.stringify(res));
+          var data = {};
+          External.TradevanKioskCommon.CommonService.OpenSecondMonitor(
+            JSON.stringify(data),
+            function(res) {
+              //alert(JSON.stringify(res));
+            },
+            function() {}
+          );
         },
         function() {}
       );
@@ -59,9 +66,9 @@ Vue.component('component-mainMenu-main', {
     kiosk.app.clearUserData();
 
     // 開啟第二螢幕
-    if (kiosk.app.getInitStatus()) {
-      this.OpenSecondMonitor();
-    }
+    //if (kiosk.app.getInitStatus()) {
+    this.OpenSecondMonitor();
+    //}
   },
   beforeDestroy: function() {
     kiosk.app.setInitStatus(false);
