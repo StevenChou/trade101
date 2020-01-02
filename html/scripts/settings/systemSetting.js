@@ -81,7 +81,7 @@
             remind: {
                 remindTitle1: 'Reminder!',
                 remindTitle2: 'Please be sure you attain tax refund application form before leaving.',
-                remindTitle3: 'Please prepare your travel document (passport / exist & entry permit) and your invoices issued by Taipei 101 Mall for tax refund application, then click "Start."',
+                remindTitle3: 'Please prepare your travel document (passport / exit & entry permit) and your invoices issued by Taipei 101 Mall for tax refund application, then click "Start."',
                 btTitle: 'Start',
                 toSelectDoc: 'selectDoc',
             },
