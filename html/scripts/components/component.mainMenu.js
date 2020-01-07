@@ -12,7 +12,18 @@ Vue.component('component-mainMenu-main', {
         topRightCount: 0,
         keyboardLockOne: true,
         keyboardLockTwo: true
-      }
+      },
+      closingTimeList: {
+        Sunday: { closingTime: '21:30:00' },
+        Monday: { closingTime: '21:30:00' },
+        Tuesday: { closingTime: '21:30:00' },
+        Wednesday: { closingTime: '21:30:00' },
+        Thursday: { closingTime: '21:30:00' },
+        Friday: { closingTime: '22:00:00' },
+        Saturday: { closingTime: '22:00:00' }
+      },
+      openingTime: '10:50:00', // 提前十分鐘開機 10:50:00
+      closingTimer: null
     };
   },
   methods: {
@@ -53,6 +64,43 @@ Vue.component('component-mainMenu-main', {
         },
         function() {}
       );
+    },
+    toClosingPage: function(unitTestTime) {
+      const mainMenuObj = this;
+
+      // ＊＊＊ [ 設定 timer ---> 無限迴圈 ] ＊＊＊
+      // 前十分鐘，導入到暫停營業畫面 (timer 每十秒，執行一次！！)
+      mainMenuObj.closingTimer = setInterval(function() {
+        const now = !unitTestTime ? new Date() : unitTestTime;
+        const timeFormat = 'HH:mm:ss';
+        const curDateTime = moment(now)
+          .format('YYYY-MM-DD' + ',' + 'dddd' + ',' + timeFormat)
+          .split(',');
+        const baseTimeStr =
+          mainMenuObj.closingTimeList[curDateTime[1]].closingTime;
+        const curTime = moment(curDateTime[2], timeFormat).format(timeFormat);
+        const baseTime = moment(baseTimeStr, timeFormat)
+          .subtract(10, 'minutes')
+          .format(timeFormat);
+
+        // ＊＊＊ [ 時間小於當日 10:50:00 直接導入暫停營業頁面 ] ＊＊＊
+        if (
+          moment(curDateTime[0] + ' ' + curTime).isBefore(
+            curDateTime[0] + ' ' + mainMenuObj.openingTime
+          )
+        ) {
+          kiosk.API.goToNext('closingPage');
+        }
+
+        // ＊＊＊ [ 現在時間大於關閉時間 ] ＊＊＊
+        if (
+          moment(curDateTime[0] + ' ' + curTime).isAfter(
+            curDateTime[0] + ' ' + baseTime
+          )
+        ) {
+          kiosk.API.goToNext('closingPage');
+        }
+      }, 10000);
     }
   },
   computed: {
@@ -69,9 +117,15 @@ Vue.component('component-mainMenu-main', {
     //if (kiosk.app.getInitStatus()) {
     this.OpenSecondMonitor();
     //}
+
+    // 導到暫停服務頁面！！
+    this.toClosingPage();
+    // [UnitTest]
+    // this.toClosingPage(moment('2020-01-09 21:45:01', 'YYYY-MM-DD HH:mm:ss'));
   },
   beforeDestroy: function() {
     kiosk.app.setInitStatus(false);
+    clearInterval(this.closingTimer);
   }
 });
 

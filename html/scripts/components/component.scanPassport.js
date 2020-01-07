@@ -70,11 +70,28 @@ Vue.component('component-scanPassport-main', {
                       // global data --- 儲存護照相關資訊
                       scanPassportObj.storeUserData(jsonObj, resObj);
 
-                      setTimeout(function() {
-                        kiosk.API.goToNext(
-                          scanPassportObj.wording['toPreScanQR']
-                        );
-                      }, 1500);
+                      if (scanPassportObj.varifyAmt()) {
+                        setTimeout(function() {
+                          kiosk.API.goToNext(
+                            scanPassportObj.wording['toPreScanQR']
+                          );
+                        }, 1500);
+                      } else {
+                        Swal.fire({
+                          type: 'warning',
+                          onClose: function() {
+                            kiosk.API.goToNext('mainMenu');
+                          },
+                          width: 600,
+                          // text: '此發票無法退稅，因為其中一筆品項不能退稅!',
+                          html:
+                            '<h3>' +
+                            kiosk.wording[scanPassportObj.culture].scanPassport
+                              .amtErr +
+                            '</h3>'
+                          // footer: '<a href>請通知客服~</a>'
+                        });
+                      }
                     } else {
                       // alert('>>> 重新掃描');
                       scanPassportObj.lock = false;
@@ -129,6 +146,19 @@ Vue.component('component-scanPassport-main', {
       kiosk.app.$data.userData['ename'] = validationObj.result['ename'];
       kiosk.app.$data.userData['dayAmtTotal'] =
         validationObj.result['dayAmtTotal'];
+    },
+    varifyAmt: function() {
+      //kiosk.app.$data.userData['sumIndateAmt'] = 777777;
+      let isValid = true;
+      isValid =
+        isValid && parseFloat(kiosk.app.$data.userData['dayAmtTotal']) < 48000;
+      isValid =
+        isValid &&
+        parseFloat(kiosk.app.$data.userData['sumIndateAmt']) < 120000;
+      isValid =
+        isValid &&
+        parseFloat(kiosk.app.$data.userData['yearAmtTotal']) < 240000;
+      return isValid;
     },
     startPassportScan: function() {
       const scanPassportObj = this;
