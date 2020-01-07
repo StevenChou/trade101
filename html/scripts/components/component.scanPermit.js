@@ -121,8 +121,17 @@ Vue.component('component-scanPermit-main', {
         .join('');
       kiosk.app.$data.userData['idn'] = validationObj.result['idn'];
       kiosk.app.$data.userData['ename'] = validationObj.result['ename'];
+
+      // [ 2020 新增 --- 退稅金額提醒 ]
+      // 當日累計金額
       kiosk.app.$data.userData['dayAmtTotal'] =
         validationObj.result['dayAmtTotal'];
+      // 年度累計金額
+      kiosk.app.$data.userData['yearAmtTotal'] =
+        validationObj.result['yearAmtTotal'];
+      // 入境日累計金額
+      kiosk.app.$data.userData['sumIndateAmt'] =
+        validationObj.result['sumIndateAmt'];
     },
     StopScanner: function() {
       kiosk.API.Device.Scanner.stopScanner();
