@@ -162,12 +162,12 @@ Vue.component('component-scanQRcode-main', {
           }
         })
         .catch(function(err) {
-          kiosk.API.log.logInfo('>>> 錯誤紀錄:' + JSON.stringify(err));
+          //kiosk.API.log.logInfo('>>> 錯誤紀錄:' + JSON.stringify(err));
           Swal.fire({
             type: 'error',
-            title: '糟糕...',
-            text: '伺服器錯誤!',
-            footer: '<a href>請通知客服~</a>'
+            //title: '糟糕...',
+            text: kiosk.wording[scanQRcode.culture].scanQRcode.scanQRError5
+            //footer: '<a href>請通知客服~</a>'
           });
         })
         .finally(function() {
@@ -176,7 +176,9 @@ Vue.component('component-scanQRcode-main', {
           }
 
           kiosk.app.$data.lockBtn = false;
-          scanQRcode.StartScanner();
+          setTimeout(() => {
+            scanQRcode.StartScanner();
+          }, 1000);
         });
     },
     isValidInvItem: function(res, invNo) {

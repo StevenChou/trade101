@@ -158,6 +158,8 @@
         scanQRError3: 'This invoice is invalid for application',
         scanQRError4:
           'This invoice may contain non-refundable purchase; or this invoice is not issued today.',
+        scanQRError5:
+          'We are processing this invoice now.<br>Please return for tax refund application later, thank you for your patience.',
         scanQRErrorDup: 'Verification success，<br>please scan next invoice.',
         amtErr:
           'The purchase exceeds NT$48,000.<br>Please proceed to Tax Refund Center,  we will help you apply for tax refund.<br>You will collect refund at airports / ports before departure.',
@@ -291,6 +293,8 @@
         scanQRError2: '請掃描下一張',
         scanQRError3: '此發票無法退稅',
         scanQRError4: '發票中可能包含無法退稅商品或不是今日消費的發票',
+        scanQRError5:
+          '此張購物發票訊息仍在處理中。<br>請您稍候再辦理退稅，感謝您的耐心等候。',
         scanQRErrorDup: '發票重複輸入，<br>請掃描下一張',
         amtErr:
           '本次消費總金額已超過現場兌領退稅門檻。<br>請前往退稅服務中心，將有專人為您辦理大額退稅，您將於離境時領取退稅。',
@@ -420,6 +424,8 @@
         scanQRError2: '请扫描下一张',
         scanQRError3: '此发票无法退税',
         scanQRError4: '发票中可能包含无法退税商品或不是今日消费的发票',
+        scanQRError5:
+          '此张购物发票讯息仍在处理中。<br>请您稍候再办理退税，感谢您的耐心等候。',
         scanQRErrorDup: '发票资料重复输入，<br>请扫描下一张',
         amtErr:
           '本次消费总金额已超过现场兑领退税门槛。<br>请前往退税服务中心，将有专人为您办理大额退税，您将於离境时领取退税。',
@@ -557,6 +563,8 @@
         scanQRError3: 'このレシートは税金還付ができません',
         scanQRError4:
           '税金還付のできない商品が含まれているか、今日消費したレシートではない可能性があります。',
+        scanQRError5:
+          'We are processing this invoice now.<br>Please return for tax refund application later, thank you for your patience.',
         scanQRErrorDup:
           '領収書情報はすでに入力済みです，<br>次のレシートをスキャンしてください',
         amtErr:
@@ -693,6 +701,8 @@
         scanQRError3: '세금을 환급할 수 없는 영수증입니다.',
         scanQRError4:
           '영수증에 세금을 환급할 수 없는 상품이 포함되어 있거나, 금일 구매하신 영수증이 아닙니다.',
+        scanQRError5:
+          'We are processing this invoice now.<br>Please return for tax refund application later, thank you for your patience.',
         scanQRErrorDup: '영수증 정보 중복 입력，<br>다음 장을 스캔하세요',
         amtErr:
           '이 소비 총액은 현장 세금환급 기준액을 초과했습니다.<br>세금환급 서비스 센터로 가시면 귀하를 위해 고액 세금환급 처리를 도와드리겠습니다. 환급액은 출국 시에 수령하실 수 있습니다.',
@@ -830,6 +840,8 @@
         scanQRError3: 'ใบแจ้งหนี้ฉบับนี้ไม่สามารถคืนเงินภาษี',
         scanQRError4:
           'ใบแจ้งหนี้อาจหมายถึงสินค้าที่ไม่สามารถคืนเงินภาษีหรือเป็นใบแจ้งหนี้ที่ไม่ได้ใช้บริโภคภายในวันนั้นๆ',
+        scanQRError5:
+          'We are processing this invoice now.<br>Please return for tax refund application later, thank you for your patience.',
         scanQRErrorDup: 'ป้อนข้อมูลใบแจ้งหนี้ซ้ำ <br>โปรดสแกนหน้าถัดไป',
         amtErr:
           'ยอดเงินบริโภคครั้งนี้เกินเลยเกณฑ์กฎระเบียบการคืนเงินภาษีแล้ว <br>กรุณาติดต่อได้ที่ศูนย์บริการคืนภาษี เราจะดำเนินเรื่องคืนเงินภาษีให้ท่าน ทั้งนี้ท่านจะได้เงินภาษีคืนในวันที่ท่านเดินทางกลับประเทศ',
@@ -1100,6 +1112,8 @@
         scanQRError3: 'No es posible devolver impuestos de este recibo.',
         scanQRError4:
           'Posiblemente el recibo contenga un artículo no sujeto a devolución de impuestos o el recibo no se corresponde a un compra realizada hoy.',
+        scanQRError5:
+          'We are processing this invoice now.<br>Please return for tax refund application later, thank you for your patience.',
         scanQRErrorDup:
           'Datos de factura ya introducidos.<br>Escanee la siguiente factura',
         amtErr:
@@ -1443,6 +1457,8 @@
         scanQRError3: 'Hóa đơn này không được hoàn thuế.',
         scanQRError4:
           'Trong hóa đơn có thể bao gồm sản phẩm không được hoàn thuế hoặc không phải hóa đơn tiêu dùng trong ngày hôm nay .',
+        scanQRError5:
+          'We are processing this invoice now.<br>Please return for tax refund application later, thank you for your patience.',
         scanQRErrorDup: 'Hóa đơn bị lặp lại.<br>Vui lòng quét trang tiếp theo',
         scanQRcodeLoading:
           'Đang tra tìm dữ liệu<div id="circleG"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>',
