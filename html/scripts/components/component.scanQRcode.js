@@ -299,7 +299,9 @@ Vue.component('component-scanQRcode-main', {
       if (!scanQRcode.varifyAmt(sendData.rows)) {
         Swal.fire({
           type: 'warning',
-          onClose: function() {},
+          onClose: function() {
+            kiosk.API.goToNext('mainMenu');
+          },
           width: 600,
           html:
             '<h3>' +

@@ -282,6 +282,10 @@ var kiosk = kiosk || {};
     )
       return;
     if (kiosk.gobackToMainMenu && !testFlag.viewDebugger) {
+      kiosk.API.Device.Scanner.stopScanner(
+        function(res) {},
+        function(res) {}
+      );
       //vieShow.StepManager.goToHome();
       kiosk.API.idle.GoHome();
       // kiosk.API.goToNext('mainMenu');
