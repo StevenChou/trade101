@@ -176,7 +176,7 @@ Vue.component('component-scanQRcode-main', {
           }
 
           kiosk.app.$data.lockBtn = false;
-          setTimeout(() => {
+          setTimeout(function() {
             scanQRcode.StartScanner();
           }, 1000);
         });
