@@ -88,7 +88,8 @@ Vue.component('component-scanPassport-main', {
                             '<h3>' +
                             kiosk.wording[scanPassportObj.culture].scanPassport
                               .amtErr +
-                            '</h3>'
+                            '</h3>',
+                          showConfirmButton: false
                           // footer: '<a href>請通知客服~</a>'
                         });
                       }

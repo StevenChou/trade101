@@ -28,7 +28,6 @@ Vue.component('component-detail-main', {
       this.rows[index].check = !this.rows[index].check;
     },
     handleItemDelete: function() {
-      console.log('>>> clicked!!');
       var detailObj = this;
       this.rows = this.rows.filter(function(row) {
         // 刪除對應發票品項
@@ -172,21 +171,27 @@ Vue.component('component-detail-main', {
     }
   },
   mounted: function() {
-    console.log('>>>[mounted] detail');
     if (this.hasCheckProperty()) {
       this.rows = kiosk.app.$data.invoiceNum;
       this.items = kiosk.app.$data.invoiceItems;
     } else {
       Swal.fire({
         type: 'error',
-        title: '糟糕...',
-        text: '發票格式錯誤!',
-        footer: '<a href>請通知客服~</a>'
+        width: 500,
+        title: '<span style="font-size: 27px;">' + '糟糕...' + '</span>',
+        html:
+          '<span style="font-size: 24px; font-weight:bold;">' +
+          '發票格式錯誤!' +
+          '</span>',
+        footer:
+          '<span style="font-size: 24px; color: red; font-weight:bold;">' +
+          '請通知客服' +
+          '</span>',
+        showConfirmButton: false
       });
     }
   },
   beforeDestroy: function() {
-    console.log('>>>[beforeDestroy] detail');
     kiosk.app.$data.invoiceNum = this.rows;
     kiosk.app.$data.invoiceItems = this.items;
   }

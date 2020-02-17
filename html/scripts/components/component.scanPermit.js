@@ -93,7 +93,8 @@ Vue.component('component-scanPermit-main', {
                       html:
                         '<h3>' +
                         kiosk.wording[scanPermit.culture].scanPermit.amtErr +
-                        '</h3>'
+                        '</h3>',
+                      showConfirmButton: false
                       // footer: '<a href>請通知客服~</a>'
                     });
                   }

@@ -102,13 +102,21 @@ Vue.component('component-scanQRcode-main', {
 
                 Swal.fire({
                   type: 'error',
-                  title: '糟糕...',
-                  text:
-                    '>>> 回傳資訊:' +
+                  width: 500,
+                  title:
+                    '<span style="font-size: 27px;">' + '糟糕...' + '</span>',
+                  html:
+                    '<span style="font-size: 24px; font-weight:bold;">' +
+                    '回傳資訊:' +
                     resObj.result['message'] +
                     '---' +
-                    resObj.result['status'],
-                  footer: '<a href>請通知客服~</a>'
+                    resObj.result['status'] +
+                    '</span>',
+                  footer:
+                    '<span style="font-size: 24px; color: red; font-weight:bold;">' +
+                    '請通知客服' +
+                    '</span>',
+                  showConfirmButton: false
                 });
                 // 這邊要改阿
                 // for testing  之後要刪掉!!
@@ -165,8 +173,13 @@ Vue.component('component-scanQRcode-main', {
           //kiosk.API.log.logInfo('>>> 錯誤紀錄:' + JSON.stringify(err));
           Swal.fire({
             type: 'error',
+            width: 500,
             //title: '糟糕...',
-            text: kiosk.wording[scanQRcode.culture].scanQRcode.scanQRError5
+            html:
+              '<span style="font-size: 24px; font-weight:bold;">' +
+              kiosk.wording[scanQRcode.culture].scanQRcode.scanQRError5 +
+              '</span>',
+            showConfirmButton: false
             //footer: '<a href>請通知客服~</a>'
           });
         })
