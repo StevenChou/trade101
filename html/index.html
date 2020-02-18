@@ -229,6 +229,22 @@
       })(jQuery);
 
       $('body').disablescroll();
+
+      (function OpenSecondMonitor() {
+        // 傳入的參數
+        //PlayListFile：C:\ITKiosk\html\content\ad.mpcpl
+
+        var jsonData = {
+          PlayListFile: 'C:\\ITKiosk\\html\\content\\ad.mpcpl'
+        };
+
+        External.KioskCommon.CommonService.OpenSecondMonitor(
+          JSON.stringify(jsonData),
+          function(res) {
+            alert(JSON.stringify(res));
+          }
+        );
+      })();
     </script>
   </body>
 </html>
